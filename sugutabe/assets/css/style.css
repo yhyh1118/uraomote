@@ -1,0 +1,1612 @@
+@charset "utf-8";
+
+/*==========================
+common
+==========================*/
+
+:root {
+    --primary-white: #fff;
+    --primary-yellow: #FFE57B;
+    --primary-black: #000;
+    --primary-darkGreen: #4C7416;
+    --primary-green: #83B73C;
+    --primary-red: #f44c4c;
+    --primary-purple: #9C8AC7;
+    --primary-gray: #D6D6D6;
+    --contentWidth: 89.3%;
+    --contentPadding: 4.2%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0 auto;
+    font-family: "Sawarabi Mincho",
+        "Sawarabi Gothic";
+    font-style: normal;
+    color: var(--primary-black, #000);
+    background-image: url(..//images/back_main.png);
+    font-weight: 400;
+    line-height: 1.5;
+    min-width: 330px;
+    max-width: 1920px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+.section__comment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section__comment--1line img:first-of-type {
+    height: 18px;
+    transform: rotate(-25deg);
+}
+
+.section__comment--1line img:last-of-type {
+    height: 18px;
+    transform: rotate(25deg);
+}
+
+.section__comment--2line img:first-of-type {
+    height: 28px;
+    transform: rotate(-25deg);
+}
+
+.section__comment--2line img:last-of-type {
+    height: 28px;
+    transform: rotate(25deg);
+}
+
+.section__comment__txt {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.section__title__block {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.section__icon {
+    width: 50px;
+    object-fit: contain;
+    opacity: 0.3;
+}
+
+.section__icon:first-of-type {
+    margin-right: -40px;
+}
+
+.section__icon:last-of-type {
+    margin-left: -40px;
+}
+
+.section__title__txt {
+    color: var(--primary-black, #000);
+    text-align: center;
+    font-family: "Sawarabi Mincho";
+    font-size: 2.4rem;
+}
+
+.section__topic {
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 2.1px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/btn.png");
+    width: 295px;
+    height: 50px;
+    color: var(--primary-white);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: "Sawarabi Gothic";
+    font-size: 2.0rem;
+    border-radius: 25px;
+    object-fit: contain;
+    position: relative;
+}
+
+.btn--header {
+    display: none;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-10px);
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/arrow.svg");
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 769px) {
+    .section__title {
+        gap: 10px;
+        margin-top: 0px;
+    }
+
+    .section__comment {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .spBr {
+        display: none;
+    }
+
+    .section__comment--1line img:first-of-type {
+        height: 32px;
+        transform: rotate(-25deg);
+    }
+
+    .section__comment--1line img:last-of-type {
+        height: 32px;
+        transform: rotate(25deg);
+    }
+
+    .section__comment--2line img:first-of-type {
+        height: 32px;
+        transform: rotate(-25deg);
+    }
+
+    .section__comment--2line img:last-of-type {
+        height: 32px;
+        transform: rotate(25deg);
+    }
+
+    .section__comment__txt {
+        text-align: center;
+        font-size: 2.0rem;
+    }
+
+    .section__title__txt {
+        /* font-family: "Sawarabi Mincho"; */
+        font-size: 3.8rem;
+    }
+
+    .section__icon {
+        width: auto;
+        height: 90px;
+        object-fit: contain;
+        opacity: 1;
+    }
+
+    .section__icon:first-of-type {
+        margin-right: 0;
+    }
+
+    .section__icon:last-of-type {
+        margin-left: 0;
+    }
+
+    .section__topic {
+        font-size: 1.4rem;
+        letter-spacing: 7px;
+        margin: 100px 12.5% auto auto;
+    }
+
+    .btn {
+        width: 518px;
+        height: 84px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        font-size: 3.0rem;
+        border-radius: 42px;
+    }
+
+    .btn--header {
+        display: flex;
+        width: 300px;
+        height: 60px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        font-size: 1.6rem;
+        border-radius: 30px;
+    }
+
+    .btn::after {
+        right: 35px;
+        transform: translateY(-17.5px);
+        width: 35px;
+        height: 35px;
+    }
+
+    .btn--header::after {
+        right: 30px;
+        transform: translateY(-15px);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+/* ===================
+header
+=================== */
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 6.4%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--primary-gray);
+    background-color: var(--primary-white);
+}
+
+.logo {
+    width: 110px;
+}
+
+.nav__btn,
+.close {
+    width: 13px;
+    height: 12px;
+    margin: auto 0;
+}
+
+.nav {
+    background-color: var(--primary-white), #fff;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 0.4s;
+}
+
+.nav.active {
+    transform: translateX(0);
+}
+
+.nav__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 6.4%;
+    border-bottom: 1px solid var(--primary-gray);
+    background-color: var(--primary-white);
+}
+
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 11.7%;
+    background-image: url("../images/back_main.png");
+    height: 100vh;
+}
+
+.nav__menu,
+.menu {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav__menu::before {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 1px;
+    margin-right: 10px;
+    background: #053D69;
+}
+
+/* header__pc */
+@media screen and (min-width: 769px) {
+    .header {
+        padding: 24px 6.4%;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .nav__btn,
+    .close,
+    .nav,
+    .nav__header {
+        display: none;
+    }
+}
+
+/* header終わり */
+
+/* main */
+.menu__list {
+    display: none;
+}
+
+.main__textBox {
+    padding: 15px 6.4%;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    max-width: 950px;
+}
+
+.primary__txt {
+    font-size: 2.4rem;
+    display: flex;
+}
+
+.primary__txt:first-of-type {
+    justify-content: flex-start;
+}
+
+.primary__txt:nth-child(2) {
+    justify-content: center;
+}
+
+.primary__txt:last-of-type {
+    justify-content: flex-end;
+}
+
+.top__sub {
+    position: relative;
+}
+
+.sub__img img {
+    position: absolute;
+}
+
+
+.sub__img2 {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    top: 206px;
+    right: 0;
+}
+
+.sub__img1 {
+    width: 125px;
+    height: 90px;
+    object-fit: cover;
+    top: 611.37px;
+    left: 40px;
+}
+
+.sub__img3 {
+    width: 184px;
+    height: 155px;
+    object-fit: cover;
+    top: 1078.63px;
+    right: 40px;
+}
+
+@media screen and (min-width: 769px) {
+    /* .top__main {
+        position: relative;
+    } */
+
+    .top__main img {
+        width: 70%;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        position: absolute;
+        top: 156.59px;
+        right: 12.5%;
+        height: auto;
+    }
+
+    .menu::before {
+        content: '';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 12px;
+        height: 1px;
+        margin-right: 10px;
+        background: #053D69;
+    }
+
+    .main__textBox {
+        width: 58%;
+        margin: 50px 12.5% auto auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .primary__txt {
+        font-size: 4.8rem;
+    }
+
+    .sub__img {
+        display: flex;
+        gap: 10%;
+        margin: -76.62px 12.5% 0 14%;
+        width: auto;
+        aspect-ratio: 1060 / 432;
+    }
+
+    .sub__img img {
+        position: static;
+    }
+
+    .sub__img2 {
+        width: 21%;
+        height: auto;
+        aspect-ratio: 220 / 145;
+        align-self: flex-start;
+    }
+
+    .sub__img1 {
+        width: 25%;
+        height: auto;
+        aspect-ratio: 260 / 220;
+        align-self: center;
+
+    }
+
+    .sub__img3 {
+        width: 28%;
+        height: auto;
+        aspect-ratio: 1;
+        align-self: flex-end;
+    }
+}
+
+/* main終わり */
+
+/* about */
+.section--about {
+    gap: 77px;
+    padding: 25px 11.7% 220px;
+    position: relative;
+}
+
+.top__icon img {
+    width: 40px;
+    object-fit: cover;
+    position: absolute;
+}
+
+.broccoli {
+    left: 40px;
+    top: 133.37px;
+}
+
+.eggplant {
+    right: 40.345px;
+    bottom: 492.63px;
+}
+
+.paprika,
+.tomato,
+.cabbege {
+    display: none;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 90px;
+}
+
+.about__txt {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-feature-settings: 'vert' on;
+    font-family: "Shippori Mincho";
+    font-size: 1.5rem;
+    line-height: 120%;
+    letter-spacing: 2.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.about__txt--right {
+    height: 304px;
+    justify-content: flex-start;
+}
+
+.about__txt--left {
+    height: 323px;
+    justify-content: flex-end;
+}
+
+@media screen and (min-width: 769px) {
+    .section--about {
+        padding: 0;
+    }
+
+    .top__icon img {
+        width: auto;
+        height: 115px;
+    }
+
+    .paprika,
+    .cabbege {
+        display: block;
+    }
+
+    .broccoli {
+        left: 18%;
+        top: -92px;
+    }
+
+    .eggplant {
+        left: 9%;
+        top: 605px;
+    }
+
+    .paprika {
+        right: 9%;
+        top: -775px;
+    }
+
+    .cabbege {
+        right: 8%;
+        top: 405px;
+    }
+
+
+    .about__content {
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 70px;
+        margin: 0px 12.5% 200px;
+    }
+
+    .about__txt {
+        font-size: 2.0rem;
+        line-height: 125%;
+        letter-spacing: 2.2px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        height: 425px;
+    }
+
+    .about__txt--right {
+        justify-content: flex-start;
+    }
+
+    .about__txt--left {
+        justify-content: flex-start;
+    }
+
+    .pcMargin {
+        margin-left: 35px;
+    }
+
+}
+
+/* reason */
+.section--reason {
+    background-image: url(../images/back_red.png);
+    padding: 50px 0 30px;
+}
+
+.section__topic--reason {
+    font-size: 0.6rem;
+    margin-bottom: 26px;
+
+}
+
+.reason__3 {
+    color: #f44c4c;
+    font-size: 5.0rem;
+}
+
+.reason__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 50px 11.7%;
+
+}
+
+.reason__list img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reason__txtBox {
+    position: relative;
+    z-index: 10;
+}
+
+.reason__txtBox::before {
+    content: '';
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.reason__topic {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.reason__number {
+    font-family: "Aref Ruqaa Ink";
+    font-size: 2.0rem;
+    width: 30px;
+    height: 48px;
+    margin-right: -15px;
+}
+
+.number {
+    width: 36px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+}
+
+.number img {
+    width: 26px;
+    height: 35px;
+}
+
+.reason__topic__title {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.reason__txt {
+    font-family: "Sawarabi Gothic";
+    font-size: 1.6rem;
+    line-height: 200%;
+    margin-top: 22px;
+}
+
+
+@media screen and (min-width: 769px) {
+    .section--reason {
+        background-image: url(../images/back_red.png);
+        padding: 0 0 150px;
+    }
+
+
+    .section__topic--reason {
+        font-size: 1.4rem;
+        margin-bottom: -54px;
+    }
+
+    .reason__3 {
+        font-size: 6.0rem;
+    }
+
+    .reason__content {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        padding: 60px 12.5% 150px;
+    }
+
+    .reason__list {
+        flex-direction: row;
+        gap: 100px;
+        padding: 0;
+    }
+
+    .reason__list:nth-child(2) {
+        flex-direction: row-reverse;
+    }
+
+    .reason__list img {
+        width: 50%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .reason__txtBox {
+        /* position: relative;
+        z-index: 10; */
+        width: 420px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reason__txtBox::before {
+        /* content: ''; */
+        width: 400px;
+        height: 400px;
+        /* border-radius: 50%; */
+        /* position: absolute; */
+        /* top: 0; */
+        /* left: 0; */
+        /* background-color: #FFF; */
+        /* filter: blur(50px); */
+        /* z-index: -1; */
+    }
+
+    .reason__topic {
+        flex-direction: row;
+    }
+
+    .number {
+        width: 70px;
+        height: 65px;
+        display: flex;
+        align-items: flex-start;
+        position: absolute;
+        left: 0;
+    }
+
+    .reason__number {
+        /* font-family: "Aref Ruqaa Ink"; */
+        font-size: 3.0rem;
+        width: 30px;
+        /* height: px */
+        margin-right: 5px;
+    }
+
+
+    .number img {
+        width: 35px;
+        height: 50px;
+    }
+
+    .reason__topic__title {
+        /* text-align: center; */
+        font-size: 2.8rem;
+    }
+
+    .reason__txt {
+        font-family: "Sawarabi Gothic";
+        font-size: 1.8rem;
+        line-height: 200%;
+        margin-top: 36px;
+    }
+}
+
+/* trial */
+.section--trial {
+    margin: 50px 0 80px;
+}
+
+.trial__content {
+    margin: 52px 11.8%;
+    border: 2px solid var(--primary-darkGreen);
+    background: #FFF;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.20);
+}
+
+.trial_list {
+    margin: 3px;
+    padding-bottom: 30px;
+    border: 1px solid var(--primary-gray);
+}
+
+.trial__good {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.good__txt {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+
+}
+
+.good__name {
+    font-size: 2.2rem;
+}
+
+.good__detail {
+    font-size: 1.8rem;
+}
+
+.good__place {
+    color: #4C7416;
+    font-size: 1.3rem;
+    line-height: 200%;
+    border-radius: 18px;
+    padding: 0 16px;
+    border: 1px solid var(--primary-darkGreen);
+    background: var(--primary-white);
+}
+
+.good__price {
+    display: flex;
+    align-items: flex-end;
+}
+
+.price {
+    color: #f44c4c;
+    font-family: Montserrat;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1%;
+}
+
+.price__number {
+    color: #f44c4c;
+    font-family: Montserrat;
+    font-size: 4.0rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.tax {
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 769px) {
+    .section--trial {
+        margin: 0 0 150px;
+    }
+
+    .section__topic--trial {
+        font-size: 1.4rem;
+        margin-bottom: -48px;
+    }
+
+    .trial__content {
+        margin: 50px 12.5%;
+        border: 3px solid var(--primary-darkGreen);
+        /* background: #FFF; */
+        box-shadow: 0px 2px 10px 0px rgba(58, 31, 12, 0.20);
+    }
+
+    .trial_list {
+        margin: 10px;
+        border: 2px solid var(--primary-gray);
+        display: flex;
+    }
+
+    .trial__good {
+        /* flex-direction: column; */
+        gap: 20px;
+    }
+
+    .good__txt {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: center;
+
+    }
+
+    .good__name {
+        font-size: 2.6rem;
+    }
+
+    .good__detail {
+        font-size: 2.0rem;
+    }
+
+    .good__place {
+        font-size: 1.8rem;
+        border-radius: 1.8rem;
+    }
+
+    .good__price {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .price {
+        font-size: 5.0rem;
+    }
+
+    .price__number {
+        font-size: 7.0rem;
+    }
+
+    .tax {
+        font-size: 1.4rem;
+    }
+}
+
+/* ratio */
+.section--ratio {
+    background-image: url(../images/back_ratio_sp.png);
+    background-size: cover;
+    background-position: center;
+    padding: 30px 11.7% 80px;
+}
+
+.ratio__titleNum {
+    color: #83B73C;
+    font-size: 3.8rem;
+}
+
+.ratio__content {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+    padding: 50px 13.6%;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.80);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.ratio__txtBox {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.ratio__txt {
+    font-family: "Sawarabi Gothic";
+    font-size: 1.6rem;
+    line-height: 200%;
+}
+
+@media screen and (min-width: 769px) {
+    .section--ratio {
+        background-image: url(../images/back_ratio_sp.png);
+        background-size: cover;
+        background-position: center;
+        padding: 150px 12.5%;
+    }
+
+    .ratio__titleNum {
+        color: #83B73C;
+        font-size: 7.0rem;
+    }
+
+    .ratio__content img {
+        width: 318px;
+        height: 318px;
+    }
+
+    .ratio__txtBox {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .ratio__txt {
+        font-family: "Sawarabi Gothic";
+        font-size: 1.6rem;
+        line-height: 200%;
+    }
+}
+
+
+@media screen and (min-width: 1249px) {
+    .ratio__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 90px;
+        margin-top: 10px;
+        padding: 50px 13.6%;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.80);
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+}
+
+/* farmer */
+
+.section--farmer {
+    background-image: url(../images/back_green.png);
+    padding: 50px 0 80px;
+}
+
+.farmer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 50px;
+}
+
+.farmer__person__veg img {
+    width: 71%;
+    height: 376px;
+    object-fit: cover;
+}
+
+.farmer__introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    margin-top: -140px;
+    width: 100%;
+    height: auto;
+}
+
+.farmer__comment {
+    text-align: right;
+    font-size: 2.2rem;
+    text-shadow: 0px 0px 10px var(--primary-white);
+}
+
+.farmer__name {
+    color: var(--primary-darkGreen);
+    font-size: 1.2rem;
+    background-color: var(--primary-yellow);
+    padding: 3px 12px;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.farmer__txt {
+    font-size: 1.6rem;
+    line-height: 200%;
+    font-family: "Sawarabi Gothic";
+    width: 66%;
+    padding: 40px;
+    border-radius: 40px 0 0 0;
+    background-color: var(--primary-white);
+
+}
+
+.farmer__person__kuti {
+    text-align: right;
+}
+
+.farmer__person__kuti img {
+    width: 71%;
+    height: 376px;
+    object-fit: cover;
+}
+
+.farmer__introduction--even {
+    align-items: flex-start;
+}
+
+.farmer__comment--even {
+    text-align: left;
+    font-size: 2.2rem;
+    text-shadow: 0px 0px 10px var(--primary-white);
+}
+
+.farmer__txt--even {
+    border-radius: 0 40px 0 0;
+    text-align: left;
+}
+
+@media screen and (min-width: 769px) {
+
+    .section--farmer {
+        background-image: url(../images/back_green.png);
+        padding: 0px 0 150px;
+    }
+
+    .section__topic--farmer {
+        font-size: 1.4rem;
+        margin-bottom: -55px;
+    }
+
+    .farmer__list {
+        margin-top: 80px;
+    }
+
+
+
+    .farmer__person__veg img {
+        height: auto;
+    }
+
+    .farmer__introduction {
+        gap: 24px;
+        width: 100%;
+        height: auto;
+        margin-top: -450px;
+    }
+
+    .farmer__comment {
+        text-align: right;
+        font-size: 2.8rem;
+        text-shadow: 0px 0px 10px var(--primary-white);
+    }
+
+    .farmer__name {
+        color: var(--primary-darkGreen);
+        font-size: 2.0rem;
+        background-color: var(--primary-yellow);
+        padding: 3px 12px;
+        border-radius: 2.0rem;
+    }
+
+    .farmer__txt {
+        font-size: 1.8rem;
+        line-height: 180%;
+        padding: 80px;
+        width: 36.3%;
+        border-radius: 80px 0 0 0;
+        background-color: var(--primary-white);
+
+    }
+
+    .farmer__person__kuti img {
+        height: auto;
+    }
+
+    .farmer__comment--even {
+        font-size: 2.8rem;
+    }
+
+    .farmer__txt--even {
+        border-radius: 0 80px 0 0;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .farmer__person__veg {
+        padding-right: 12.5%;
+    }
+
+    .farmer__person__kuti {
+        padding-left: 12.5%;
+    }
+
+}
+
+
+
+/* quality */
+.section--quality {
+    background-image: url(../images/back_quality_sp.png);
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 200px;
+}
+
+.quality__content {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.quality__note {
+    color: #EB1C35;
+    text-align: center;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    font-size: 1.8rem;
+    width: 300px;
+}
+
+.quality__txt {
+    font-family: "Sawarabi Gothic";
+    font-size: 1.6rem;
+    padding: 0 11.7%;
+    line-height: 200%;
+}
+
+.pcBr {
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+    .section--quality {
+        background-image: url(../images/back_quality.png);
+        background-size: cover;
+        padding: 150px 12.5%;
+    }
+
+    .quality__content {
+        /* display: flex;
+        flex-direction: column; */
+        gap: 17px;
+        align-items: flex-start;
+        /* margin-top: 40px; */
+        padding-left: 50%;
+    }
+
+    .quality__note {
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+        font-size: 2.8rem;
+        width: auto;
+    }
+
+    .quality__txt {
+        font-family: "Sawarabi Gothic";
+        font-size: 1.8rem;
+        padding: 0;
+        line-height: 200%;
+    }
+
+    .pcBr {
+        display: block;
+    }
+}
+
+
+/* voice */
+.section--voice {
+    background-image: url(../images/back_purple.png);
+    padding: 50px 0 80px;
+}
+
+.section__icon--voice {
+    width: 100px;
+    margin-left: -80px;
+    overflow: hidden;
+}
+
+.voice__list {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 11.7% 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slick-initialized .slick-slide {
+    display: flex !important;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+
+.voice__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;}
+
+
+.voice__content img {
+    border-radius: 40px 0;
+}
+
+.voice__img img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.voice__mainComment {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.voice__txt {
+    font-size: 1.6rem;
+    line-height: 200%;
+}
+
+.voice__place {
+    font-size: 1.8rem;
+    text-align: right;
+    border-bottom: 1px solid var(--primary-gray);
+    margin-top: 14px;
+}
+
+/* slick */
+
+.slick-arrow:before{
+    content:""!important;
+    width: 20px!important;
+    height: 35px!important;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.slick-next:before{
+    background: url(../images/voiceArrow_right.svg)!important;
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+}
+
+.slick-prev:before{
+    background: url(../images/voiceArrow_left.svg)!important;
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+}
+
+@media screen and (min-width: 769px) {
+    .section--voice {
+        background-image: url(../images/back_purple.png);
+        padding: 0px 0 150px;
+    }
+
+    .section__topic--voice {
+        margin-bottom: -42px;
+    }
+
+    .section__icon--voice {
+        margin-left: -80px;
+    }
+
+    .voice__list {
+        flex-direction: row;
+        gap: 36px;
+        padding: 50px 12.5% 0px;
+    }
+
+    /* .voice__list::before {
+    content: '';
+    position: absolute;
+    background-image: url(../images/voiceArrow_left.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 41px;
+    top: 450px;
+    left: 12px;
+    z-index: 1;
+}
+
+.voice__list::after {
+    content: '';
+    position: absolute;
+    background-image: url(../images/voiceArrow_right.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 41px;
+    top: 450px;
+    left: 12px;
+    z-index: 1;
+} */
+
+    .voice__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .voice__content img {
+        aspect-ratio: 4 / 3 ;
+        object-fit: cover;
+        border-radius: 50px 0;
+    }
+
+    .voice__mainComment {
+        font-size: 2.6rem;
+        text-align: center;
+    }
+
+    .voice__txt {
+        font-size: 1.8rem;
+        line-height: 180%;
+    }
+
+    .voice__place {
+        font-size: 2.0rem;
+        margin-top: 24px;
+        margin-top: auto;
+    }
+}
+
+/* qa */
+.section--qa {
+    padding: 50px 11.7% 80px;
+
+}
+
+.qa__list {
+    background-image: url(../images/note.png);
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.qa__list::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 4px);
+    transform: rotate(-1deg);
+    background-color: var(--primary-yellow);
+    z-index: -1;
+}
+
+
+.qa__img img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.qa__tomato {
+    top: -16px;
+    right: -10px;
+}
+
+.qa__eggplant {
+    top: 20%;
+    left: -22px;
+}
+
+.qa__cabbege {
+    top: 50%;
+    right: -22px;
+}
+
+.qa__broccoli {
+    bottom: 20%;
+    left: -22px;
+}
+
+.qa__paprika {
+    bottom: -27px;
+    right: -6px;
+}
+
+
+
+.qa__q {
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.qa__q:last-of-type {
+    margin-top: 70px;
+}
+
+.qa__q:last-of-type::before {
+    content: '';
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-gray);
+}
+
+.qa__a {
+    font-family: "Sawarabi Gothic";
+    font-size: 1.6rem;
+    line-height: 200%;
+    margin-top: 12px;
+}
+
+@media screen and (min-width: 769px) {
+    .section--qa {
+        padding: 100px 16.7% 200px;
+    
+    }
+    
+    .qa__list {
+        padding: 70px 10%;
+        margin-top: 50px;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    }
+    
+    .qa__list::before {
+        top: -4px;
+        left: 0;
+        height: calc(100% + 8px);
+    }
+    
+    .qa__img img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .qa__tomato {
+        top: -137px;
+        right: -40px;
+    }
+    
+    .qa__eggplant {
+        top: -90px;
+        left: -135px;
+    }
+    
+    .qa__cabbege {
+        top: 40%;
+        right: -166px;
+    }
+    
+    .qa__broccoli {
+        bottom: 10%;
+        left: -177px;
+    }
+    
+    .qa__paprika {
+        bottom: -136px;
+        right: -6px;
+    }
+    
+    
+    
+    .qa__q {
+        font-size: 1.8rem;
+        position: relative;
+    }
+    
+    .qa__q:last-of-type {
+        margin-top: 70px;
+    }
+    
+    .qa__q:last-of-type::before {
+        content: '';
+        position: absolute;
+        top: -35px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--primary-gray);
+    }
+    
+    .qa__a {
+        font-family: "Sawarabi Gothic";
+        font-size: 1.6rem;
+        line-height: 200%;
+        margin-top: 12px;
+    }
+}
+
+/* footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 12px 11.7%;
+    background-color: var(--primary-white);
+    border-top: 1px solid var(--primary-gray);
+}
+
+@media screen and (min-width: 769px) {}

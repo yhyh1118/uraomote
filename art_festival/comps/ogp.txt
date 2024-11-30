@@ -1,0 +1,15 @@
+以下のサイトを参照
+https://ogp.me/
+※meta要素の末尾にスラッシュが付いている場合は、以下のサンプルのように削除してください。
+
+■head要素にprefix属性を指定
+<head prefix="og: https://ogp.me/ns#">
+
+■head要素内に設置するmeta情報
+<meta property="og:url" content=" ページのURL ※絶対パスで記述">
+<meta property="og:type" content=" ページの種類 => website">
+<meta property="og:title" content=" ページのタイトル => titleの内容と合わせる">
+<meta property="og:description" content=" ページの説明文  => discriptionと合わせる">
+<meta property="og:site_name" content="サイト名" => 会社名やブランド名>
+<meta property="og:image" content=" サムネイル画像のURL  ※絶対パスで記述">
+

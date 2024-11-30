@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 35">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9d9d9d;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="-7.77" y="16.91" width="40.55" height="1.18" transform="translate(-9 18.06) rotate(-55.97)"/>
+</svg>

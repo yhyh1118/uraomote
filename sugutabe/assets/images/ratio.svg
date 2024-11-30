@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d6d6d6;
+      }
+
+      .cls-2 {
+        fill: #7faf3e;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        font-size: 35px;
+      }
+
+      .cls-4, .cls-5 {
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+      }
+
+      .cls-6 {
+        font-size: 15px;
+        letter-spacing: .06em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8 {
+        font-size: .1px;
+      }
+
+      .cls-9 {
+        letter-spacing: .02em;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-1" d="M100.15,100.79l1.7-97.17c53.67.94,96.41,45.2,95.47,98.87s-45.2,96.41-98.87,95.47c-53.67-.94-96.41-45.2-95.47-98.87C3.9,46.5,47.55,3.6,100.15,3.6v97.18Z"/>
+    <path class="cls-2" d="M100.15,100.79V3.6c1.07,0,.62,0,1.7.01l-1.7,97.17Z"/>
+  </g>
+  <circle class="cls-2" cx="100" cy="100" r="65"/>
+  <text class="cls-4" transform="translate(71.58 114.94)"><tspan class="cls-7" x="0" y="0">0</tspan><tspan class="cls-9" x="22.92" y="0">.</tspan><tspan x="32.72" y="0">5</tspan></text>
+  <text class="cls-5" transform="translate(129.87 113.89)"><tspan class="cls-6" x="0" y="0">%</tspan><tspan class="cls-8" x="14.02" y="-5.21">%</tspan></text>
+  <polygon class="cls-3" points="74.46 86.19 73.11 87.39 65.31 79.29 68.02 76.88 74.46 86.19"/>
+  <polygon class="cls-3" points="78.1 84.49 76.36 84.79 73.72 74.41 77.2 73.82 78.1 84.49"/>
+  <polygon class="cls-3" points="71.6 88.57 71.14 90.03 61.97 87.55 62.89 84.63 71.6 88.57"/>
+</svg>
