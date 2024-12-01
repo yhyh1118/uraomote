@@ -1,0 +1,675 @@
+@charset "utf-8";
+/* ===================
+common(共通の設定として)
+=================== */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family:
+        'Noto Sans JP',
+        Arial,
+        sans-serif;
+    font-style: normal;
+    color: #2f2f2f;
+    background-color: #fff;
+    line-height: 1.5;
+}
+
+/* 親要素に合わせて、画像の拡大・縮小をする */
+img {
+    /* ↓画像が持っているサイズ以上に広がりませんよ。
+    でかいサイズの写真用意してねって意図*/
+    max-width: 100%;
+    height: auto;
+}
+
+.section__topic {
+    /* figmaにある以下の設定は、必要ないから、使わなくって良いかな。 */
+    /* color: #2F2F2F;
+    text-align: center; */
+
+    /* 以下の部分をコピーしてた */
+    /* TITLE/base */
+    font-family: Arial;
+    /* font-size: 32px; 以下に変えました*/
+    font-size: 3.2rem;
+    /* font-style: normal; これは初期設定で書いたから、消していい。*/
+    font-weight: 700;
+    /* line-height: 130%; 表記を合わせる*/
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* ===================
+header
+=================== */
+
+.header {
+    /* これ％にしたいんだよね 
+    横幅が375なので、[24（余白）/375（表示させたい幅）]する*/
+    padding: 24px 6.4% 16px;
+}
+
+/* ２個一括で設定しています */
+.header__topic,
+.nav__topic {
+    color: #000;
+    /* text-align: center; */
+    /* font-family: "Noto Sans JP"; */
+    font-size: 2.4rem;
+    /* font-style: normal; */
+    font-weight: 700;
+    /* line-height: 150%; */
+}
+
+/* nav初期表示 */
+.nav {
+    background: rgba(255, 255, 255, 0.90);
+    width: 100%;
+    /* どういうデバイスが来ても広げろってやつ */
+    height: 100vh;
+    /* 余白の設定（上下、左右） */
+    padding: 24px 6.4%;
+    /* 常に同じところにいてほしいやつ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 背景に潜らないようにする、デカめの数字設定 */
+    z-index: 100;
+
+    /* 左にずらして見切れてて欲しい
+    今いる位置から、どれくらいずらしたいか(X軸とY軸) */
+    transform: translateX(-100%);
+    /* ふわっと出てきて欲しいな 
+    transformに対して出て欲しいので、記載*/
+    transition: transform 0.4s;
+}
+
+.nav__header {
+    /* 横並びにしている */
+    display: flex;
+    /* 左右にする */
+    justify-content: space-between;
+    /* 水平にする */
+    align-items: center;
+}
+
+.nav__list {
+    margin-top: 66px;
+}
+
+.nav__item {
+    color: #2F2F2F;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+    /* 一番上（TOP）の52pxの設定に関しては、62pxに相殺されております。 */
+    margin-top: 52px;
+    /* アイコンの調整していきます */
+}
+
+/* これで、imgを選択できる */
+.nav__item img {
+    /* サイズの調整ができる横並び要素 */
+    display: inline-block;
+    /* 縦位置の調整（3px下にずらす） */
+    vertical-align: -3px;
+    /* 右に余白を */
+    margin-right: 24px;
+}
+
+/* activeがついたら、nav右から出てくる設定(元に戻れって感じ)
+transformか-100%から0へ
+あらかじめ、ボタン押したら、active変わる設定しております。*/
+.nav.active {
+    transform: translateX(0);
+}
+
+/* ハンバーガーメニューについて、displyflexにすると、ナビゲーションまで影響受けちゃう。
+要素に入ってしまうため。
+そのため、position使っていきましょう。*/
+.header__btn {
+    display: block;
+    width: 18px;
+    height: 11px;
+    /* カーソルを手にするよ */
+    cursor: pointer;
+    position: absolute;
+    top: 37px;
+    right: 6.4%;
+}
+
+/* ヘッダーに関するPCの設定 */
+/* 770以上で、PC用にするやつ？ */
+@media screen and (min-width: 769px) {
+    .header {
+        /* 1280以上は広がらない */
+        max-width: 1280px;
+        /* ヘッダーが左側に寄ったままにならないようにキープする */
+        margin: 0 auto;
+        padding: 48px 60px 24px;
+        /* ヘッダーの右のやつもフレックスにする */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* ヘッダートピックで違う所を記載 */
+    .header__topic {
+        font-size: 3.2rem;
+        line-height: 1;
+    }
+
+    /* 色々リセットする */
+    .nav {
+        background: transparent;
+        /* ブロック要素の初期値 */
+        width: auto;
+        height: auto;
+        padding: 0;
+        /* ポジション元に戻す */
+        position: static;
+        transform: translateX(0);
+    }
+
+    .nav__list {
+        display: flex;
+        margin-top: 0;
+    }
+
+    .nav__item {
+        margin-top: 0;
+        color: #FF7000;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.3;
+        margin-left: 32px;
+    }
+
+    .nav__header {
+        display: none;
+    }
+
+    .nav__item img {
+        display: none;
+        margin-right: 0;
+    }
+
+    .nav__item:first-of-type {
+        display: none;
+    }
+
+    .header__btn {
+        display: none;
+    }
+}
+
+/* ===================
+main
+=================== */
+
+/* article header */
+.mainImg .mainImg__pc {
+    display: none;
+}
+
+.mainTopics {
+    padding: 48px 6.4rem;
+}
+
+.mainTopics__name {
+    color: #FF7000;
+    text-align: center;
+    /* 標準ノトなので、残しておく */
+    font-family: Arial;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.mainTopics__txt {
+    font-size: 1.4rem;
+    /* 下から上に対して余白開けた方が、良さそう。
+    賛否両論あり */
+    margin-top: 24px;
+}
+
+
+/* PC用 */
+@media screen and (min-width: 769px) {
+    .mainImg .mainImg__pc {
+        display: block;
+    }
+
+    .mainImg .mainImg__sp {
+        display: none;
+    }
+
+    .mainTopics {
+        padding: 64px 0;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .mainTopics__name {
+        font-size: 3.2rem;
+    }
+
+    .mainTopics__name .spBr {
+        display: none;
+    }
+
+    .mainTopics__txt {
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-top: 32px;
+    }
+}
+
+/* lineUpの設定します */
+.section--lineUp {
+    padding: 48px 4.2%;
+    background-color: #FFF8E0;
+}
+
+.lineUp__item {
+    margin-top: 20px;
+}
+
+/* カードの一番上のやつだけ設定したい時 */
+.lineUp__item:first-of-type {
+    margin-top: 32px;
+}
+
+/* 白い枠 */
+.lineUp__content {
+    padding: 16px;
+    background-color: #fff;
+    /* 角丸　（左上から時計回り） */
+    border-radius: 0 0 8px 8px;
+}
+
+.lineUp__name {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.lineUp__category {
+    display: inline-block;
+    color: #FF7000;
+    font-size: 1.6rem;
+    font-weight: 700;
+    /* これは複数行にする際に設定する項目
+Paddingで確実に距離を測るために、「1」に設定している */
+    line-height: 1;
+    background-color: #FFF8E0;
+    padding: 4px 16px;
+    margin-top: 16px;
+}
+
+.lineUp__txt {
+    font-size: 1.4rem;
+    margin-top: 16px;
+}
+
+.detail {
+    color: #FF7000;
+    font-size: 1.4rem;
+    margin-top: 16px;
+}
+
+.detail__location {
+    border-bottom: 1px solid #FF7000;
+}
+
+.detail__txt {
+    margin-top: 16px;
+}
+
+/* LineUp PC設定 */
+@media screen and (min-width: 769px) {
+    .section--lineUp {
+        padding: 64px 0 96px;
+    }
+
+    .lineUp {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 60px;
+        display: flex;
+        justify-content: center;
+        /* アイテム間だけの余白を設定する */
+        gap: 20px;
+    }
+
+    .lineUp__item {
+        max-width: 373px;
+        margin-top: 48px;
+    }
+
+    .lineUp__item:first-of-type {
+        margin-top: 48px;
+    }
+}
+
+
+/* ボタンなので、ブロック化しましょう */
+/*  */
+.btn {
+    display: block;
+    color: #FFF;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+    /* ボタンの後ろ */
+    border-radius: 4px;
+    background: #FF7000;
+    /* 上、左右、下 */
+    padding: 16px 0px 18px;
+    margin-top: 16px;
+    /* 動き */
+    transition: 0.4s;
+    position: relative;
+}
+
+/* 擬似要素です
+忘れたので、またやろう */
+.btn::after {
+    /* サイズの設定・位置などを詳しく設定したいのでブロック要素に変える
+    そのままだとインライン要素になる */
+    display: block;
+    /* ''←これはお決まりらしい */
+    content: '';
+    width: 7px;
+    height: 12px;
+    background-image: url(../images/btn-arrow.svg);
+    /* 縦と横見切れんなよって設定 */
+    background-size: contain;
+    /* 繰り返すなよって設定 */
+    background-repeat: no-repeat;
+    /* ど真ん中へ */
+    background-position: center;
+    position: absolute;
+    /* これだと、要素の上が基準になり、下がりすぎる。 
+    そのため要素の半分だけ、上にずらす*/
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+/* ホバーはコロン１個らしい */
+.btn:hover {
+    opacity: 0.5;
+}
+
+/* Accessやります。 */
+.section--access {
+    padding: 48px 0;
+}
+
+.address {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.address img {
+    margin-right: 8px;
+    /* 水平位置の調整 でもリセットなんとかで設定されてたから、いらんかも
+    枠に変な隙間開くから、それ無くすために記載*/
+    vertical-align: bottom;
+    width: 20px;
+}
+
+.map {
+    width: 100%;
+    height: 400px;
+    margin-top: 24px;
+}
+
+.directions {
+    /* 下は全体で設定済みなので0でいい */
+    padding: 24px 6.4% 0;
+}
+
+.directions__item:last-of-type {
+    margin-top: 24px;
+}
+
+.directions__topic {
+    color: #FF7000;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.directions__txt {
+    font-size: 1.4rem;
+    margin-top: 8px;
+}
+
+/* access pc */
+@media screen and (min-width: 769px) {
+    .section--access {
+        max-width: 1280px;
+        margin: auto;
+        padding: 64px 60px 96px;
+    }
+
+    .address {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-top: 32px;
+    }
+
+    .map {
+        margin-top: 32px;
+    }
+
+    .directions {
+        padding: 32px 0 0;
+        display: flex;
+        /* 要素が横にくっつく */
+        justify-content: space-between;
+    }
+
+    .directions__item {
+        width: 48%;
+    }
+
+    .directions__item:last-of-type {
+        margin-top: 0;
+    }
+
+    .directions__topic {
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    .directions__txt {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-top: 16px;
+    }
+}
+
+
+/* ニュース設定します */
+.section--news {
+    padding: 48px 4.2%;
+    background: #FF7000;
+
+}
+
+/* モディファイヤー */
+.section__topic--news {
+    color: #FFF;
+}
+
+.news__list {
+    background-color: #fff;
+    padding: 24px 4.2%;
+    margin-top: 32px;
+}
+
+.news__topic {
+    color: #FF7000;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 24px;
+}
+
+.news__topic:first-of-type {
+    margin-top: 0;
+}
+
+.news__topic time {
+    background: #FFF8E0;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 4px 16px;
+}
+
+/* 開業するために、spanタグをブロック要素にする 
+あとは、paddingの4px分加えてマージン設定する*/
+.news__topic span {
+    display: block;
+    margin-top: 12px;
+}
+
+.news__txt {
+    font-size: 1.4rem;
+    margin-top: 8px;
+}
+
+/* ニュースのPC設定 */
+@media screen and (min-width: 769px) {
+    .section--news {
+        padding: 64px 0 96px;
+    }
+
+    .news__list {
+        padding: 48px 96px;
+        max-width: 1160px;
+        margin: 32px auto 0;
+    }
+
+    .news__topic {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+        margin-top: 32px;
+    }
+
+    .news__topic time {
+        font-size: 1.6rem;
+    }
+
+    .news__topic span {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+}
+
+
+/* ===================
+footer
+=================== */
+
+.footer {
+    padding: 32px 4.2%;
+}
+
+.footer__topic {
+    color: #000;
+    font-family: Arial;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.3rem;
+}
+
+.menu__list {
+    margin-top: 32px;
+}
+
+.menu__item {
+    color: #FF7000;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-top: 16px;
+}
+
+/* display:flexでliタグたちを横並びにする */
+.sns {
+    margin-top: 32px;
+    display: flex;
+}
+
+.sns__item {
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+}
+
+/* コピーライト */
+.copy {
+    margin-top: 64px;
+}
+
+.copy small {
+    font-size: 12px;
+}
+
+/* footer pc */
+@media screen and (min-width: 769px) {
+    .footer {
+        padding: 64px 60px;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .footer__group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer__topic {
+        font-size: 2.4rem;
+        line-height: 1;
+    }
+
+    .menu__list {
+        margin-top: 0;
+        display: flex;
+    }
+
+    .menu__item {
+        font-size: 1.6rem;
+        line-height: 1;
+        margin-top: 0;
+        margin-left: 32px;
+    }
+
+    .sns{
+        /* 左がstart、右がend */
+        justify-content: flex-end;
+    }
+
+    .sns__item{
+        margin: 0 0 0 24px;
+    }
+
+    .copy{
+        margin-top: 32px;
+    }
+}
