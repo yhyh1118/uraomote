@@ -3,32 +3,160 @@
 
 /* ============================================ 
 	common
-  
-  .light-theme {
-    background: #fff;
-    color: #333;
-  }
-  .dark-theme {
-    background: #000;
-    color: #ddd
-  }
   /* ============================================ */
-  
-   img {
-    width: 100%;
-    height: 100%;
-    color: #000;
-  }
-  
+
+:root {
+  --primary-white: #FFFFFF;
+  --primary-light: #E0E0E0;
+  --primary-lightGray: #8B8B8B;
+  --primary-gray: #535353;
+  --primary-darkGray: #3D3D3D;
+  --primary-dark: #222222;
+  --primary-noiseDark: ;
+  --primary-black: #111111;
+
+  --contentWidth: 91.4%;
+  --contentPadding: 6.4%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family:
+    'Noto Sans JP',
+    Arial,
+    sans-serif;
+  font-style: normal;
+  color: var(--primary-light);
+  line-height: 1;
+
+  /* 背景設定 */
+  background-color: var(--primary-dark);
+  background-image: url('/assets/img/noise.svg');
+  /* SVGファイルを背景として指定 */
+  background-size: cover;
+  /* 背景を全体にフィットさせる */
+  background-repeat: no-repeat;
+  /* 繰り返しを防ぐ（必要に応じて） */
+  background-blend-mode: overlay;
+  /* 背景とノイズを混ぜ合わせる */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 32px;
+  border: 0.5px solid var(--primary-light);
+}
+
+.btn__arrow {
+  width: 10px;
+  margin: auto 0 ;
+
+}
+
+/* .light-theme {
+  background: #fff;
+  color: #333;
+}
+
+.dark-theme {
+  background: #000;
+  color: #ddd
+} */
+
 
 /* ============================================ 
 header
 /* ============================================ */
 
 .header {
+  padding: 0 0 0 var(--contentPadding);
   position: fixed;
-  background-color: red;
-  mix-blend-mode: multiply;
+
+
+  /* background-color: var(--primary-dark); */
+  /* mix-blend-mode: multiply; */
+}
+
+.logo {
+  width: 35px;
+}
+
+/* ============================================ 
+nav
+/* ============================================ */
+
+.nav {
+  background: var(--primary-dark);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* transform: translateX(-100%); */
+  /* transition: transform 0.4s; */
+}
+
+.close {
+  font-family: "Protest Strike";
+  font-size: 2.0rem;
+}
+
+.nav__header {
+  height: 45px;
+  padding-left: 4.2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid var(--primary-light);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+}
+
+.nav__item {
+  font-family: "Protest Strike";
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+.nav__footer {
+  padding: var(--contentPadding);
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.5px solid var(--primary-light);
+  position: fixed;
+  bottom: 0;
+}
+
+.nav__sns {
+  display: flex;
+  width: 85px;
+  justify-content: space-between;
 }
 
 
@@ -54,4 +182,4 @@ banner
 
 .cont {
   color: #fff;
-} */
+}

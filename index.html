@@ -7,6 +7,14 @@
   <meta name="description" content="">
   <title>劇団うらおもて</title>
 
+
+  <!-- web font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Protest+Strike&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&family=Zen+Kaku+Gothic+Antique&display=swap"
+    rel="stylesheet">
+
   <!-- css -->
   <link rel="stylesheet" href="assets/css/destyle.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -33,10 +41,11 @@
 
       <!-- nav -->
       <nav class="nav">
-        <div class="logo"><a href="index.html"><img src="assets/img/logo_white.svg" alt=""></a></div>
-        <div class="close">close</div>
+        <div class="nav__header">
+          <div class="logo"><a href="index.html"><img src="assets/img/logo_white.svg" alt=""></a></div>
+          <div class="close">close</div>
+        </div>
         <!-- nav_list -->
-        <div class="nav__header"></div>
         <ul class="nav__list">
           <li class="nav__item"><a href="#about">ABOUT</a></li>
           <li class="nav__item"><a href="#member">MEMBER</a></li>
@@ -46,22 +55,27 @@
           <li class="nav__item"><a href="#">GOODS</a></li>
           <li class="nav__item"><a href="#contact">CONTACT</a></li>
         </ul>
-        <!-- sns -->
-        <ul class="sns">
-          <li class="sns_item"><a href="#" target="_blank"><img src="assets/img/instagram.svg" alt=""></a></li>
-          <li class="sns_item"><a href="#" target="_blank"><img src="assets/img/twitter.svg" alt=""></a></li>
-          <li class="sns_item"><a href="#" target="_blank"><img src="assets/img/youtube.svg" alt=""></a></li>
-        </ul>
-        <!-- ticket reserv -->
-        <a class="btn" href="">Reserve ticket</a>
-
-        <!-- header_btn -->
-        <div class="nav_btn">menu</div>
-
-        <!-- dark_light -->
-        <img class="dark_light" src="assets/img/sun.svg" alt="">
-        <img class="dark_light" src="assets/img/moon.svg" alt="">
+        <div class="nav__footer">
+          <!-- sns -->
+          <ul class="nav__sns">
+            <li class="sns_item"><a href="#" target="_blank"><img src="assets/img/instagram.svg" alt=""></a></li>
+            <li class="sns_item"><a href="#" target="_blank"><img src="assets/img/twitter.svg" alt=""></a></li>
+            <li class="sns_item"><a href="#" target="_blank"><img src="assets/img/youtube.svg" alt=""></a></li>
+          </ul>
+          <!-- ticket reserve -->
+          <a class="btn" href="">
+            <div>Reserve ticket</div>
+            <div class="btn__arrow"><img src="assets/img/arrow.png" alt=""></div>
+          </a>
+        </div>
       </nav>
+
+      <!-- header_btn -->
+      <div class="nav_btn">menu</div>
+
+      <!-- dark_light -->
+      <img class="dark_light" src="assets/img/sun.svg" alt="">
+      <img class="dark_light" src="assets/img/moon.svg" alt="">
     </header>
 
     <main class="main">
@@ -88,15 +102,6 @@
         <div class="scroll_img">
 
         </div>
-
-
-
-        一応、デザインに関してはひと段落ということで、
-        お二人ともお忙しい中、かなりのお時間割いていただき、本当にありがとうございました！🙇
-        なかなか技術が足りず、要望にお答えできないところもあったと思いますが、すごく楽しかったです…！
-        WordPress化する際も、引き続き色々試行錯誤しながら、改善していきたいなと思っているので、よろしくお願いします！
-
-
 
         <!-- act -->
         <section class="section section--act">
