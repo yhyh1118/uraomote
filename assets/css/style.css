@@ -43,6 +43,11 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  object-fit: cover;
+}
+
+.logo {
+  width: 35px;
 }
 
 .btn {
@@ -57,8 +62,8 @@ img {
 
 .btn__arrow {
   width: 10px;
-  margin: auto 0 ;
-
+  display: flex;
+  align-items: center;
 }
 
 /* .light-theme {
@@ -77,17 +82,23 @@ header
 /* ============================================ */
 
 .header {
-  padding: 0 0 0 var(--contentPadding);
   position: fixed;
-
-
-  /* background-color: var(--primary-dark); */
-  /* mix-blend-mode: multiply; */
+  top: 0;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--contentPadding);
+  align-items: center;
+  z-index: 1;
+  /* mix-blend-mode: difference; */
 }
 
-.logo {
-  width: 35px;
+.logo-top, 
+.nav__open {
+  mix-blend-mode: difference;
 }
+
 
 /* ============================================ 
 nav
@@ -95,26 +106,30 @@ nav
 
 .nav {
   background: var(--primary-dark);
-  width: 100%;
-  height: 100vh;
+  background-image: url(../img/noise.svg);
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100vh;
   z-index: 100;
-  /* transform: translateX(-100%); */
-  /* transition: transform 0.4s; */
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+  mix-blend-mode: normal;
 }
 
-.close {
+.nav__open,
+.nav__close {
   font-family: "Protest Strike";
   font-size: 2.0rem;
 }
 
 .nav__header {
+  width: 100%;
   height: 45px;
-  padding-left: 4.2%;
   display: flex;
   justify-content: space-between;
+  padding: 0 var(--contentPadding);
   align-items: center;
   border-bottom: 0.5px solid var(--primary-light);
 }
@@ -160,8 +175,6 @@ nav
 banner
 /* ============================================ */
 
-
-
 .banner {
   width: 100%;
   height: 100%;
@@ -178,4 +191,25 @@ banner
 
 .cont {
   color: #fff;
+}
+
+
+
+/* ============================================ 
+main
+/* ============================================ */
+
+.mainImg {
+  margin-top: 45px;
+  padding: 0 var(--contentPadding);
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.mainLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
