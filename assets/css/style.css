@@ -34,14 +34,10 @@ body {
 
   /* 背景設定 */
   background-color: var(--primary-dark);
-  background-image: url('/assets/img/noise.svg');
-  /* SVGファイルを背景として指定 */
+  background-image: url(../img/noise.svg);
   background-size: cover;
-  /* 背景を全体にフィットさせる */
-  background-repeat: no-repeat;
-  /* 繰り返しを防ぐ（必要に応じて） */
   background-blend-mode: overlay;
-  /* 背景とノイズを混ぜ合わせる */
+  height: 100vh;
 }
 
 img {
