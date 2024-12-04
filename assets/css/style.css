@@ -25,9 +25,7 @@ html {
 
 body {
   font-family:
-    'Noto Sans JP',
-    Arial,
-    sans-serif;
+    'Noto Sans JP';
   font-style: normal;
   color: var(--primary-light);
   line-height: 1;
@@ -94,7 +92,7 @@ header
   /* mix-blend-mode: difference; */
 }
 
-.logo-top, 
+.logo-top,
 .nav__open {
   mix-blend-mode: difference;
 }
@@ -199,6 +197,7 @@ banner
 main
 /* ============================================ */
 
+/* main */
 .mainImg {
   margin-top: 45px;
   padding: 0 var(--contentPadding);
@@ -213,3 +212,46 @@ main
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
+.scrollDown {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: "Ysabeau Office";
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+
+/* about */
+
+.mainCaption {
+  margin: 285px var(--contentPadding) auto;
+  text-align: center;
+}
+
+.mainCaption__title {
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.595rem;
+}
+
+.mainCaption__title__sub {
+  font-size: 2.0rem;
+  letter-spacing: 0.06rem;
+}
+
+.mainCaption__txt {
+  display: inline-block;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.24rem;
+  max-width: 375px;
+}
+
+/* act */
