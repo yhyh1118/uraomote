@@ -22,24 +22,15 @@
 
 <body>
   <div id="container" class="container">
-    <!-- バナー -->
-    <!-- <div class="banner">
-      <div class="banner__content">
-        <div class="cont">NEW STAGE</div>
-        <img src="assets/img/damarunaboke.jpg" alt="">
-        <div ckass="banner__date">2024/11/3(Sun):13:00~(open 12:30~)
-          18:00~(open 17:30~)
-          2024/11/4(Mon):13:00~(open 12:30~)</div>
-        <div class="cont">Reserve ticket</div>
-        <div class="cont">scroll</div>
-      </div>
-    </div> -->
+    
+
 
     <!-- ヘッダー -->
     <header class="header">
-        <a class="logo logo-top" href="index.html">
-          <img src="assets/img/logo_white.svg" alt="">
-        </a>
+      <a class="logo" href="index.html">
+        <img class="logo-top" src="assets/img/logo_white.svg" alt="">
+      </a>
+      <div class="nav__open">menu</div>
 
       <!-- nav -->
       <nav class="nav">
@@ -70,16 +61,33 @@
           <!-- ticket reserve -->
           <a class="btn" href="">
             <div>Reserve ticket</div>
-            <div class="btn__arrow"><img src="assets/img/arrow.png" alt=""></div>
+            <div class="btn__arrow">
+              <svg class="btn__arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="7" viewBox="0 0 20 7"
+                fill="none">
+                <path
+                  d="M1 3.53113H3.8125H1ZM19 3.53113L15.5 1.03125L19 3.53113ZM19 3.53113L15.5 5.96875L19 3.53113ZM19 3.53113H7.1875H19Z"
+                  fill="#E0E0E0" />
+                <path d="M1 3.53113H3.8125M19 3.53113L15.5 1.03125M19 3.53113L15.5 5.96875M19 3.53113H7.1875"
+                  stroke="#E0E0E0" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
           </a>
         </div>
       </nav>
-
-      <!-- header_btn -->
-      <div class="nav__open">menu</div>
-
-
     </header>
+
+        <!-- バナー -->
+        <div class="banner">
+          <div class="banner__content">
+            <div class="cont">NEW STAGE</div>
+            <img src="assets/img/damarunaboke.jpg" alt="">
+            <div class="banner__date">2024/11/3(Sun):13:00~(open 12:30~)
+              18:00~(open 17:30~)
+              2024/11/4(Mon):13:00~(open 12:30~)</div>
+              <div class="cont">Reserve ticket</div>
+              <div class="cont">scroll</div>
+            </div>
+          </div>
 
     <!-- dark_light_swich -->
     <!-- <div class="swich">
@@ -91,97 +99,147 @@
       <article class="article">
         <header class="article__header">
           <!-- mainImg -->
+          <div class="topImg">
             <img class="mainImg" src="assets/img/stage/204A0918_.JPG" alt="">
-            <img class="mainLogo" src="assets/img/logo_black1.svg" alt="">
-          <!-- scroll -->
-          <p class="scrollDown">scroll Down</p>
+            <img class="mainLogo" src="assets/img/logo_white1.svg" alt="">
+            <!-- scroll -->
+            <p class="scrollDown">scroll Down</p>
+          </div>
         </header>
 
         <!-- about -->
         <section id="about" class="section">
           <div class="mainCaption">
-            <h2 class="mainCaption__title">劇団うらおもて<span class="mainCaption__title__sub">とは</span></h2>
+            <div class="mainCaption__title">
+              <h2>劇団うらおもて<span class="mainCaption__title__sub">とは</span></h2>
+              <svg class="quote_left" xmlns="http://www.w3.org/2000/svg" width="17" height="12" viewBox="0 0 17 12"
+                fill="none">
+                <path
+                  d="M6.07143 0L3.64286 4.8H7.28571V12H0V4.8L2.42857 0H6.07143ZM15.7857 0L13.3571 4.8H17V12H9.71429V4.8L12.1429 0H15.7857Z"
+                  fill="#3D3D3D" />
+              </svg>
+              <svg class="quote_right" xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13"
+                fill="none">
+                <path
+                  d="M11.9032 12.5392L14.3133 7.67283L10.6705 7.68666L10.6429 0.400995L17.9285 0.373343L17.9562 7.65901L15.5461 12.5253L11.9032 12.5392ZM2.18901 12.576L4.59913 7.7097L0.956298 7.72353L0.928646 0.437864L8.21431 0.410212L8.24196 7.69587L5.83184 12.5622L2.18901 12.576Z"
+                  fill="#3D3D3D" />
+              </svg>
+            </div>
             <p class="mainCaption__txt">ものごとの多面性に注目した表現を通して、さまざまな思い込みやしがらみから自由になり、見た人が少しだけ生きやすくなることを目標としている。</p>
+          </div>
+          <div class="scroll_img">
           </div>
         </section>
 
         <!-- scroll_img -->
-        <div class="scroll_img">
 
-        </div>
 
         <!-- act -->
         <section class="section section--act">
-          <h2 class="section__title">公演情報</h2>
-          <h3 class="section__title__en">ACT</h3>
+          <!-- <h3 class="section__title__en">ACT</h3> -->
+          <h2 class="section__title section__title--act">公演情報</h2>
           <p class="section__txt">劇団の活動情報をお伝えします。</p>
 
-          <div class="new_stage">NEW STAGE</div>
-          <img src="assets/img/damarunaboke.jpg" alt="">
-          <div class="act__detail">第一回本公演「黙るなボケ！」</div>
-          <div class="btn btn-small">
-            <div class="btn__txt">View Detail</div>
-            <div class="btn__arrow"><img src="assets/img/arrow.png" alt=""></div>
-          </div>
-          <a class="btn btn-edging" href="#">
-            <a href="#">
-              <div>View All Act</div>
+          <div class="stage__content">
+            <div class="stage">NEW STAGE</div>
+            <img class="stageImg" src="assets/img/damarunaboke.jpg" alt="">
+            <div class="stage__title">第一回本公演「黙るなボケ！」</div>
+            <a class="btn btn--normal" href="index.html">View Detail
+              <svg class="btn__arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="7" viewBox="0 0 20 7"
+                fill="none">
+                <path
+                  d="M1 3.53113H3.8125H1ZM19 3.53113L15.5 1.03125L19 3.53113ZM19 3.53113L15.5 5.96875L19 3.53113ZM19 3.53113H7.1875H19Z"
+                  fill="#E0E0E0" />
+                <path d="M1 3.53113H3.8125M19 3.53113L15.5 1.03125M19 3.53113L15.5 5.96875M19 3.53113H7.1875"
+                  stroke="#E0E0E0" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </a>
+            <!-- <div class="btn__arrow"><img src="assets/img/arrow.png" alt=""></div> -->
+          </div>
+
+          <div class="centerBlock">
+          <a class="btn btn--round" href="index.html">View All Act
+            <svg class="btn__arrow btn__arrow--round" xmlns="http://www.w3.org/2000/svg" width="20" height="7" viewBox="0 0 20 7" fill="none">
+              <path
+                d="M1 3.53113H3.8125H1ZM19 3.53113L15.5 1.03125L19 3.53113ZM19 3.53113L15.5 5.96875L19 3.53113ZM19 3.53113H7.1875H19Z" />
+              <path
+                d="M1 3.53113H3.8125M19 3.53113L15.5 1.03125M19 3.53113L15.5 5.96875M19 3.53113H7.1875" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </a>
+        </div>
 
         </section>
 
         <!-- news -->
-        <h2 class="section__title">お知らせ</h2>
-        <h3 class="section__title__en">NEWS</h3>
-        <p class="section__txt">活動の最新情報をお知らせします。</p>
+        <section class="section section--news">
+          <h2 class="section__title section__title--news">お知らせ</h2>
+          <p class="section__txt">活動の最新情報をお知らせします。</p>
 
 
-        <ul class="news__list">
-          <li class="news__content">
-            <time datetime="2024-11-4">2024.11.4</time>
-            <div class="news__txt">第1回本公演無事終了いたしました。</div>
-          </li>
-          <li class="news__content">
-            <time datetime="2024-11-4">2024.11.4</time>
-            <div class="news__txt">第1回本公演チケット予約開始</div>
-          </li>
-          <li class="news__content">
-            <time datetime="2024-11-4">2024.11.4</time>
-            <div class="news__txt">第一回公演「黙るなボケ！」</div>
-          </li>
-
-          <a class="btn" href="#">View All News</a>
-        </ul>
+          <ul class="news__list">
+            <li class="news__content">
+              <time datetime="2024-11-4">2024.11.4</time>
+              <div class="news__txt">第1回本公演無事終了いたしました。</div>
+            </li>
+            <li class="news__content">
+              <time datetime="2024-11-4">2024.11.4</time>
+              <div class="news__txt">第1回本公演チケット予約開始</div>
+            </li>
+            <li class="news__content">
+              <time datetime="2024-11-4">2024.11.4</time>
+              <div class="news__txt">第一回公演「黙るなボケ！」</div>
+            </li>
+          </ul>
+          <div class="centerBlock">
+          <a class="btn btn--round" href="#">View All News
+            <svg class="btn__arrow btn__arrow--round" xmlns="http://www.w3.org/2000/svg" width="20" height="7" viewBox="0 0 20 7" fill="none">
+              <path
+                d="M1 3.53113H3.8125H1ZM19 3.53113L15.5 1.03125L19 3.53113ZM19 3.53113L15.5 5.96875L19 3.53113ZM19 3.53113H7.1875H19Z" />
+              <path
+                d="M1 3.53113H3.8125M19 3.53113L15.5 1.03125M19 3.53113L15.5 5.96875M19 3.53113H7.1875" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        </section>
 
         <!-- note -->
-        <h2 class="section__title">稽古場日誌</h2>
-        <p class="section__txt">稽古風景の写真やスタッフの感想、劇団内で起こるさまざまな出来事を、お伝えしています。</p>
-        <a class="note__btn" href="#" target="_blank">
-          <img src="assets/img/" alt="">
-        </a>
+        <section class="section section--note">
+          <img class="note__img" src="assets/img/stage/204A2446_.JPG" alt="">
+          <h2 class="section__title section__title--note">稽古場日誌</h2>
+          <p class="section__txt">稽古風景の写真やスタッフの感想、劇団内で起こるさまざまな出来事を、お伝えしています。</p>
+          <div class="rightBlock">
+            <!-- note__btn -->
+            <a class="note__btn" href="#" target="_blank">
+              <img src="assets/img/logo_note_white.png" alt="">
+              <svg class="btn__arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="7" viewBox="0 0 20 7"
+                fill="none">
+                <path
+                  d="M1 3.53113H3.8125H1ZM19 3.53113L15.5 1.03125L19 3.53113ZM19 3.53113L15.5 5.96875L19 3.53113ZM19 3.53113H7.1875H19Z"
+                  fill="#E0E0E0" />
+                <path d="M1 3.53113H3.8125M19 3.53113L15.5 1.03125M19 3.53113L15.5 5.96875M19 3.53113H7.1875"
+                  stroke="#E0E0E0" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </section>
 
       </article>
 
       <!-- footer -->
       <footer class="footer">
-        <div class="footer__group">
-          <img src="assets/img/logo_black3.svg" alt="">
-          <ul class="sns">
-            <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/instagram.svg" alt=""></a></li>
-            <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/twitter.svg" alt=""></a></li>
-            <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/youtube.svg" alt=""></a></li>
-          </ul>
-
-
+        <img class="footer__logo" src="assets/img/logo_white3.svg" alt="">
+        <ul class="footer__sns">
+          <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/instagram.svg" alt=""></a></li>
+          <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/twitter.svg" alt=""></a></li>
+          <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/youtube.svg" alt=""></a></li>
+        </ul>
+        <div class="footer__txt">
           <div class="term">
             <a class="term" href="#">Term of use</a>
             <a class="term" href="#">Privacy Policy</a>
           </div>
-
           <!-- コピーライト -->
           <p class="copy"><small>&copy;2024 uraomote.</small></p>
-
         </div>
       </footer>
 

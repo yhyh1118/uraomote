@@ -39,30 +39,98 @@ body {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
+  filter: saturate(0);
 }
 
 .logo {
   width: 35px;
 }
 
+.section__title {
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 3.0rem;
+  font-weight: 700;
+  letter-spacing: 0.18rem;
+  position: relative;
+}
+
+.section__title::after {
+  /* content: "ACT"; */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dark-gray, #3D3D3D);
+  font-family: "Protest Strike";
+  font-size: 12.0rem;
+  font-weight: 400;
+  z-index: -1;
+}
+
+.section {
+  padding: 50px var(--contentPadding);
+}
+
+.section__txt {
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.19rem;
+  margin-top: 46px;
+  position: relative;
+}
+
+.section__txt::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-gray);
+  top: -16px;
+}
+
+.rightBlock {
+  text-align: right;
+}
+
+.centerBlock {
+  text-align: center;
+}
+
 .btn {
-  display: flex;
-  padding: 8px;
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  padding: 12px 24px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.btn--round {
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+
   border-radius: 32px;
   border: 0.5px solid var(--primary-light);
 }
 
+.btn__arrow--round path {
+  fill: var(--primary-dark); /* fill色を指定 */
+  stroke: var(--primary-dark); /* stroke色を指定 */
+}
+
 .btn__arrow {
-  width: 10px;
+  width: 18px;
   display: flex;
   align-items: center;
 }
+
 
 /* .light-theme {
   background: #fff;
@@ -88,21 +156,16 @@ header
   justify-content: space-between;
   padding: 0 var(--contentPadding);
   align-items: center;
-  z-index: 1;
-  /* mix-blend-mode: difference; */
-}
-
-.logo-top,
-.nav__open {
   mix-blend-mode: difference;
+  z-index: 1;
 }
-
 
 /* ============================================ 
 nav
 /* ============================================ */
 
 .nav {
+  mix-blend-mode: normal !important;
   background: var(--primary-dark);
   background-image: url(../img/noise.svg);
   position: fixed;
@@ -113,7 +176,6 @@ nav
   z-index: 100;
   transform: translateX(-100%);
   transition: transform 0.4s;
-  mix-blend-mode: normal;
 }
 
 .nav__open,
@@ -141,7 +203,7 @@ nav
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-
+  
 }
 
 .nav__item {
@@ -168,19 +230,30 @@ nav
   justify-content: space-between;
 }
 
-
 /* ============================================ 
 banner
 /* ============================================ */
 
 .banner {
+  background-color: var(--primary-dark);
+  background-image: url(../img/noise.svg);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
   transition: 1s;
-  background-color: #000;
+  z-index: 2;
+}
+
+.banner__content {
+  background-image: url(../img/damarunaboke.jpg);
+  margin: 45px var(--contentPadding);
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* 背景画像を全体に表示 */
+  background-position: center; /* 背景画像を中央に配置 */
+  filter: grayscale(100%); /* グレースケール効果を適用 */
 }
 
 .banner.hide {
@@ -193,6 +266,7 @@ banner
 
 
 
+
 /* ============================================ 
 main
 /* ============================================ */
@@ -201,21 +275,23 @@ main
 .mainImg {
   margin-top: 45px;
   padding: 0 var(--contentPadding);
-  position: relative;
   width: 100%;
-  height: 600px;
+  height: calc(100vh - 90px);
+  position: relative;
 }
 
 .mainLogo {
   position: absolute;
+  width: 66%;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  opacity: 0.7;
 }
 
 .scrollDown {
   position: absolute;
-  bottom: 150px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -234,24 +310,201 @@ main
 
 .mainCaption__title {
   font-family: "Zen Kaku Gothic Antique";
-  font-size: 3.5rem;
+  display: inline-block;
+  width: 280px;
+  font-size: 3.2rem;
   font-weight: 700;
-  letter-spacing: 0.595rem;
+  position: relative;
+}
+
+.quote_left {
+  position: absolute;
+  left: -15px;
+  top: -8px;
+}
+
+.quote_right {
+  position: absolute;
+  right: 33px;
+  top: -8px;
 }
 
 .mainCaption__title__sub {
   font-size: 2.0rem;
   letter-spacing: 0.06rem;
+  margin-left: 10px;
+  font-feature-settings: "palt";
 }
 
 .mainCaption__txt {
+  font-feature-settings: "palt";
   display: inline-block;
   text-align: left;
   font-size: 2.4rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 2;
-  letter-spacing: 0.24rem;
+  letter-spacing: 0.4rem;
   max-width: 375px;
+  position: relative;
+  margin-top: 34px;
+}
+
+.mainCaption__txt::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-gray);
+  top: -16px;
 }
 
 /* act */
+
+.section__title--act::after {
+  content: "ACT";
+}
+
+.stage__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.stage__content::before {
+  content: "";
+  background-color: var(--primary-black);
+  height: calc(100% - 50px);
+  width: 66%;
+  position: absolute;
+  top: 75px;
+  right: 0;
+  z-index: -1;
+}
+
+.stage {
+  color: var(--primary-gray);
+  text-align: center;
+  font-family: "Protest Strike";
+  font-size: 3.0rem;
+
+  background-color: var(--primary-light);
+  width: 174px;
+  padding: 2px;
+  margin-top: 100px;
+}
+
+.stage__title {
+  color: var(--primary-light);
+  text-align: center;
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* news */
+.section--news {
+  margin-bottom: 109px;
+}
+
+.section__title--news::after {
+  content: "NEWS";
+}
+
+.news__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 50px 0 30px;
+}
+
+.news__content {
+  background-color: var(--primary-gray);
+  padding: 16px 24px;
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.news__txt {
+  font-family: "Noto Sans JP";
+  font-size: 1.8rem;
+  font-weight: 350;
+  line-height: 1.8;
+  letter-spacing: 0.18rem;
+  margin-top: 8px;
+}
+
+.btn--news {
+  margin-top: 50px;
+}
+
+/* note */
+.section--note {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  position: relative;
+}
+
+.note__img {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 var(--contentPadding);
+}
+
+.section__title--note {
+  margin-top: 109px;
+}
+
+.note__btn {
+  background-color: var(--primary-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-top: 30px;
+}
+
+.note__btn img {
+  width: 90px;
+}
+
+/* ============================================ 
+footer
+/* ============================================ */
+
+.footer {
+  padding: 80px var(--contentPadding) 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center; 
+}
+
+.footer__sns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 223px;
+  height: 30px;
+}
+
+.footer__sns img {
+  width: 30px;
+}
+
+.footer__txt {
+  text-align: center;
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+}
+
+.copy {
+  margin-top: 13px;
+}
