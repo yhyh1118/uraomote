@@ -288,39 +288,52 @@ banner
   /* transform: translateY(-100%); */
 }
 
+.banner::after {
+  content: 'Scroll';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .banner__backGround {
-  background-image: url(../img/damarunaboke.jpg);
-  height: calc(100vh - 96px);
+  height: calc(100vh - 90px);
   filter: grayscale(100%) brightness(30%);
   position: relative;
 }
 
 .banner__content {
   position: fixed;
-  width: 100%;
-  padding: 90px 12.8%;
+  width: 80.8%;
+  max-width: 400px;
+  padding: 45px var(--contentPadding);
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .banner__content img {
+  width: 80.8%;
   filter: saturate(1);
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.25);
-  max-width: px;
+  max-width: 300px;
 }
 
 .newStage {
   font-family: "Protest Strike";
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   text-align: center;
 }
 
 .newStage__btn {
-  text-align: right;
+  text-align: center;
   position: relative;
 }
 
@@ -331,13 +344,15 @@ banner
   width: 70%;
   height: 60%;
   bottom: 0;
-  right: -24px;
+  right: -48px;
   z-index: -1;
 }
 
 .btn--banner {
+  width: 100%;
   color: var(--primary-dark);
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .btn__arrow--banner path {
