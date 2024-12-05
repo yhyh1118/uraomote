@@ -2,8 +2,8 @@
 /* CSS Document 
 
 /* ============================================ 
-	common
-  /* ============================================ */
+common
+/* ============================================ */
 
 :root {
   --primary-white: #FFFFFF;
@@ -12,11 +12,21 @@
   --primary-gray: #535353;
   --primary-darkGray: #3D3D3D;
   --primary-dark: #222222;
-  --primary-noiseDark: ;
   --primary-black: #111111;
   --contentWidth: 91.4%;
   --contentPadding: 6.4%;
 }
+
+.js-mode-light {
+  --primary-white: #FFFFFF;
+  --primary-light: #222222;
+  --primary-lightGray: #8B8B8B;
+  --primary-gray: #535353;
+  --primary-darkGray: #FFFFF;
+  --primary-dark: #222222;
+  --primary-black: #FFFFFF;
+}
+
 
 html {
   font-size: 62.5%;
@@ -43,6 +53,23 @@ img {
   object-fit: cover;
   filter: saturate(0);
 }
+
+/* ライトモードの時 */
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --primary-white: #FFFFFF;
+    --primary-light: #222222;
+    --primary-lightGray: #8B8B8B;
+    --primary-gray: #535353;
+    --primary-darkGray: #FFFFF;
+    --primary-dark: #222222;
+    --primary-black: #FFFFFF;
+  }
+
+  img {
+    filter: saturate(0.3);
+  }
+} */
 
 .logo {
   width: 35px;
@@ -178,7 +205,8 @@ header
 }
 
 .dark-light.switch {
-  transform: rotate(180deg); /* 回転角度 */
+  transform: rotate(180deg);
+  /* 回転角度 */
 }
 
 .dark-light img {
@@ -186,6 +214,47 @@ header
   height: 25px;
 }
 
+
+
+/* ---お試し-------------------------- */
+/* モード切り替えボタン */
+input[type="checkbox"] {
+  display: none;
+}
+.switch {
+  position: fixed;
+  top: .5em;
+  right: .5em;
+  font-size: 60px;
+}
+.switch-label {
+  cursor: pointer;
+}
+.switch-mode {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  transform: rotate(0);
+  transition: transform 1s;
+}
+/* 月と太陽を対角線上に設置しておく。
+   設定したspanを回したら太陽がひっくり返ってしまったので、transform scaleで上下反転した */
+.switch-mode::before {
+  content: "🌙";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.switch-mode::after {
+  content: "🌄";
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(1,-1);
+}
 
 /* ============================================ 
 nav
@@ -203,8 +272,10 @@ nav
   z-index: 100;
   /* transform: translateX(-100%); */
   opacity: 0;
-  pointer-events: none; /* 非表示のときはクリックできないように */
-  transition: opacity 0.5s ease; /* opacityとmix-blend-modeのアニメーション */
+  pointer-events: none;
+  /* 非表示のときはクリックできないように */
+  transition: opacity 0.5s ease;
+  /* opacityとmix-blend-modeのアニメーション */
   /* transition: transform 0.4s; */
 }
 
@@ -222,6 +293,10 @@ nav
   padding: 0 var(--contentPadding);
   align-items: center;
   border-bottom: 0.5px solid var(--primary-light);
+}
+
+.logo-nav {
+  width: 97px;
 }
 
 .nav__list {
@@ -260,14 +335,14 @@ nav
   justify-content: space-between;
 }
 
-.btn--nav {
-  
-}
+.btn--nav {}
 
 /* .nav.active表示 */
 .nav.active {
-  opacity: 1; /* フェードイン */
-  pointer-events: auto; /* 表示されたときにクリックできるように */
+  opacity: 1;
+  /* フェードイン */
+  pointer-events: auto;
+  /* 表示されたときにクリックできるように */
 }
 
 /* ============================================ 
