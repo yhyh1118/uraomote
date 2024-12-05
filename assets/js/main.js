@@ -66,7 +66,7 @@
             $('main').css('overflow', 'auto'); // スクロールを有効化
         });
 
-        // お試し/
+        // お試しlight-dark/
 
         // 要素やクラスを指定しておく
         const checkToggle = document.getElementById('js_mode_toggle');

@@ -17,17 +17,6 @@ common
   --contentPadding: 6.4%;
 }
 
-.js-mode-light {
-  --primary-white: #FFFFFF;
-  --primary-light: #222222;
-  --primary-lightGray: #8B8B8B;
-  --primary-gray: #535353;
-  --primary-darkGray: #FFFFF;
-  --primary-dark: #222222;
-  --primary-black: #FFFFFF;
-}
-
-
 html {
   font-size: 62.5%;
 }
@@ -55,6 +44,18 @@ img {
 }
 
 /* ライトモードの時 */
+
+.js-mode-light {
+  --primary-white: #111111;
+  --primary-light: #222222;
+  --primary-lightGray: #8B8B8B;
+  --primary-gray: #FFFFFF;
+  --primary-darkGray: #FFFFFF;
+  --primary-dark: #E0E0E0;
+  --primary-black: #FFFFFF;
+  background-color: #E0E0E0;
+}
+
 /* @media (prefers-color-scheme: light) {
   :root {
     --primary-white: #FFFFFF;
@@ -76,6 +77,7 @@ img {
 }
 
 .section__title {
+  color: var(--primary-light);
   font-family: "Zen Kaku Gothic Antique";
   font-size: 3.0rem;
   font-weight: 700;
@@ -89,7 +91,7 @@ img {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--dark-gray, #3D3D3D);
+  color: var(--primary-darkGray);
   font-family: "Protest Strike";
   font-size: 12.0rem;
   font-weight: 400;
@@ -101,6 +103,7 @@ img {
 }
 
 .section__txt {
+  color: var(--primary-light);
   font-size: 1.9rem;
   font-weight: 500;
   line-height: 1.8;
@@ -193,7 +196,7 @@ header
 }
 
 /* dark-light */
-.dark-light {
+/* .dark-light {
   position: fixed;
   left: calc(-75px + var(--contentPadding));
   bottom: 7.5px;
@@ -206,13 +209,13 @@ header
 
 .dark-light.switch {
   transform: rotate(180deg);
-  /* 回転角度 */
-}
+  /* 回転角度 
+} 
 
-.dark-light img {
+/* .dark-light img {
   width: 25px;
   height: 25px;
-}
+} */
 
 
 
@@ -221,15 +224,18 @@ header
 input[type="checkbox"] {
   display: none;
 }
+
 .switch {
   position: fixed;
   top: .5em;
   right: .5em;
   font-size: 60px;
 }
+
 .switch-label {
   cursor: pointer;
 }
+
 .switch-mode {
   position: absolute;
   top: -120px;
@@ -240,20 +246,22 @@ input[type="checkbox"] {
   transform: rotate(0);
   transition: transform 1s;
 }
+
 /* 月と太陽を対角線上に設置しておく。
    設定したspanを回したら太陽がひっくり返ってしまったので、transform scaleで上下反転した */
 .switch-mode::before {
-  content: "🌙";
+  content: "🌄";
   position: absolute;
   left: 0;
   bottom: 0;
 }
+
 .switch-mode::after {
-  content: "🌄";
+  content: "🌙";
   position: absolute;
   right: 0;
   top: 0;
-  transform: scale(1,-1);
+  transform: scale(1, -1);
 }
 
 /* ============================================ 
@@ -281,6 +289,7 @@ nav
 
 .nav__open,
 .nav__close {
+  color: #FFFFFF;
   font-family: "Protest Strike";
   font-size: 2.0rem;
 }
@@ -350,7 +359,7 @@ banner
 /* ============================================ */
 
 .banner {
-  background-color: var(--primary-dark);
+  background-color: #222222;
   background-image: url(../img/noise.svg);
   padding: 45px var(--contentPadding);
   width: 100%;
@@ -364,6 +373,7 @@ banner
 }
 
 .banner::after {
+  color: #E0E0E0;
   content: 'Scroll';
   position: absolute;
   bottom: 20px;
@@ -402,6 +412,7 @@ banner
 }
 
 .newStage {
+  color: #E0E0E0;
   font-family: "Protest Strike";
   font-size: 4.5rem;
   text-align: center;
@@ -415,7 +426,7 @@ banner
 .newStage__btn::before {
   content: '';
   position: absolute;
-  background-color: var(--primary-light);
+  background-color: #E0E0E0;
   width: 70%;
   height: 60%;
   bottom: 0;
@@ -425,23 +436,18 @@ banner
 
 .btn--banner {
   width: 100%;
-  color: var(--primary-dark);
+  color: #222222;
   display: flex;
   justify-content: flex-end;
 }
 
 .btn__arrow--banner path {
-  fill: var(--primary-dark);
-  stroke: var(--primary-dark);
-}
-
-.btn__banner {
-  width: 18px;
-  display: flex;
-  align-items: center;
+  fill: #222222;
+  stroke: #222222;
 }
 
 .banner__date {
+  color: #E0E0E0;
   text-align: center;
   font-family: "Ysabeau Office";
   font-size: 14px;
@@ -450,15 +456,9 @@ banner
   line-height: 180%;
 }
 
-.banner__scroll {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-family: "Ysabeau Office";
-  font-size: 1.5rem;
-  font-weight: 600;
+.btn--round--banner {
+  color: #222222;
+  background-color: #E0E0E0;
 }
 
 .banner.hide {
@@ -641,7 +641,6 @@ main
 /* note */
 .section--note {
   background-color: var(--primary-light);
-  color: var(--primary-dark);
   position: relative;
 }
 
@@ -655,7 +654,12 @@ main
 }
 
 .section__title--note {
+  color: var(--primary-dark);
   margin-top: 109px;
+}
+
+.section__txt--note {
+  color: var(--primary-dark);
 }
 
 .note__btn {
