@@ -43,18 +43,8 @@ img {
   filter: saturate(0);
 }
 
-/* ライトモードの時 */
 
-.js-mode-light {
-  --primary-white: #111111;
-  --primary-light: #222222;
-  --primary-lightGray: #8B8B8B;
-  --primary-gray: #FFFFFF;
-  --primary-darkGray: #FFFFFF;
-  --primary-dark: #E0E0E0;
-  --primary-black: #FFFFFF;
-  background-color: #E0E0E0;
-}
+
 
 /* @media (prefers-color-scheme: light) {
   :root {
@@ -66,7 +56,7 @@ img {
     --primary-dark: #222222;
     --primary-black: #FFFFFF;
   }
-
+  
   img {
     filter: saturate(0.3);
   }
@@ -84,6 +74,7 @@ img {
   letter-spacing: 0.18rem;
   position: relative;
 }
+
 
 .section__title::after {
   /* content: "ACT"; */
@@ -118,7 +109,18 @@ img {
   width: 100%;
   height: 2px;
   background-color: var(--primary-gray);
-  top: -16px;
+  top: -19px;
+  left: 1px;
+}
+
+.section__txt--act::before {
+  top: -20px;
+  left: 1px;
+}
+
+.section__txt--news::before {
+  top: -20px;
+  left: 5px;
 }
 
 .rightBlock {
@@ -161,18 +163,6 @@ img {
   display: flex;
   align-items: center;
 }
-
-
-/* .light-theme {
-  background: #fff;
-  color: #333;
-}
-
-.dark-theme {
-  background: #000;
-  color: #ddd
-} */
-
 
 /* ============================================ 
 header
@@ -222,27 +212,26 @@ header
 /* ---お試し-------------------------- */
 /* モード切り替えボタン */
 input[type="checkbox"] {
-  display: none;
+  display: block;
 }
 
 .switch {
   position: fixed;
-  top: .5em;
-  right: .5em;
-  font-size: 60px;
+  /* top: .5em;
+  right: .5em; */
 }
 
-.switch-label {
+/* .switch-label {
   cursor: pointer;
-}
+} */
 
 .switch-mode {
-  position: absolute;
-  top: -120px;
-  right: -120px;
+  position: fixed;
+  left: calc(-75px + var(--contentPadding));
+  bottom: -62.5px;
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   transform: rotate(0);
   transition: transform 1s;
 }
@@ -250,18 +239,22 @@ input[type="checkbox"] {
 /* 月と太陽を対角線上に設置しておく。
    設定したspanを回したら太陽がひっくり返ってしまったので、transform scaleで上下反転した */
 .switch-mode::before {
-  content: "🌄";
+  content: url("../img/sun.svg");
+  width: 25px;
+  height: 25px;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
 .switch-mode::after {
-  content: "🌙";
+  content: url("../img/moon.svg");
+  width: 25px;
+  height: 25px;
   position: absolute;
   right: 0;
   top: 0;
-  transform: scale(1, -1);
+  /* transform: scale(1, -1); */
 }
 
 /* ============================================ 
@@ -270,7 +263,7 @@ nav
 
 .nav {
   /* mix-blend-mode: normal !important; */
-  background: var(--primary-dark);
+  background: #222222;
   background-image: url(../img/noise.svg);
   position: fixed;
   top: 0;
@@ -301,7 +294,7 @@ nav
   justify-content: space-between;
   padding: 0 var(--contentPadding);
   align-items: center;
-  border-bottom: 0.5px solid var(--primary-light);
+  border-bottom: 0.5px solid #E0E0E0;
 }
 
 .logo-nav {
@@ -321,6 +314,7 @@ nav
 }
 
 .nav__item {
+  color: #E0E0E0;
   font-family: "Protest Strike";
   font-size: 4.5rem;
   font-weight: 400;
@@ -333,7 +327,7 @@ nav
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 0.5px solid var(--primary-light);
+  border-top: 0.5px solid #E0E0E0;
   position: fixed;
   bottom: 0;
 }
@@ -344,7 +338,10 @@ nav
   justify-content: space-between;
 }
 
-.btn--nav {}
+.btn--nav {
+  color: #E0E0E0;
+  margin-right: -12px;
+}
 
 /* .nav.active表示 */
 .nav.active {
@@ -387,8 +384,9 @@ banner
 
 .banner__backGround {
   height: calc(100vh - 90px);
-  filter: grayscale(100%) brightness(30%);
+  filter: saturate(0) grayscale(100%) brightness(30%)!important;
   position: relative;
+  
 }
 
 .banner__content {
@@ -406,7 +404,7 @@ banner
 
 .banner__content img {
   width: 80.8%;
-  filter: saturate(1);
+  filter: saturate(1) !important;
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.25);
   max-width: 300px;
 }
@@ -478,7 +476,8 @@ main
   position: relative;
 }
 
-.mainLogo {
+.mainLogo_dark,
+.mainLogo_light {
   position: absolute;
   width: 66%;
   top: 50%;
@@ -487,9 +486,15 @@ main
   opacity: 0.7;
 }
 
+.mainLogo_light {
+  display: none;
+}
+
 .scrollDown {
+  color: #FFFFFF;
+  mix-blend-mode: difference;
   position: absolute;
-  bottom: 80px;
+  bottom: 75px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -497,6 +502,46 @@ main
   font-size: 1.2rem;
   font-weight: 600;
 }
+
+.scrollBar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px;
+}
+
+.scrollBar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 75px;
+  background: #fff;
+  mix-blend-mode: difference;
+  animation: liner 2.5s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes liner {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  30% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  70% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}
+
+
 
 
 /* about */
@@ -676,6 +721,10 @@ main
   width: 90px;
 }
 
+.note__logo__light {
+  display: none;
+}
+
 /* ============================================ 
 footer
 /* ============================================ */
@@ -686,6 +735,11 @@ footer
   flex-direction: column;
   gap: 30px;
   align-items: center;
+}
+
+.footer__dark {
+  background-color: var(--primary-dark);
+  background-image: url(../img/noise.svg);
 }
 
 .footer__sns {
@@ -710,4 +764,73 @@ footer
 
 .copy {
   margin-top: 13px;
+}
+
+.footer__light {
+  display: none;
+}
+
+
+/* ===============================
+ライトモードの時 
+==================================*/
+.js-mode-light {
+  --primary-white: #111111;
+  --primary-light: #222222;
+  --primary-lightGray: #8B8B8B;
+  --primary-gray: #FFFFFF;
+  --primary-darkGray: #FFFFFF;
+  --primary-dark: #E0E0E0;
+  --primary-black: #FFFFFF;
+  background-color: #E0E0E0;
+}
+
+.js-mode-light img {
+  filter: saturate(0.15);
+}
+
+.js-mode-light .mainLogo_light {
+  display: block;
+}
+
+.js-mode-light .mainLogo_dark {
+  display: none;
+}
+
+
+.js-mode-light .quote path {
+  fill: #FFFFFF;
+}
+
+.js-mode-light .section--note {
+  background-color: #535353;
+}
+
+.js-mode-light .btn__arrow--normal path{
+  fill: #222222;
+  stroke: #222222;
+}
+
+.js-mode-light .note__logo__dark {
+  display: none;
+}
+
+.js-mode-light .note__logo__light {
+  display: block;
+}
+
+.js-mode-light .footer__dark {
+  display: none;
+}
+
+.js-mode-light .footer__light {
+  display: flex;
+}
+
+.js-mode-light .mainCaption__txt::before, .stage {
+  background-color: var(--primary-lightGray);
+}
+
+.js-mode-light .section__txt--note::before {
+  background-color: #E0E0E0;
 }
