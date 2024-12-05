@@ -1,0 +1,597 @@
+@charset "UTF-8";
+/* CSS Document 
+
+/* ============================================ 
+Top_header, nav
+/* ============================================ */
+
+.header {
+  mix-blend-mode: difference;
+  background-color: transparent;
+}
+
+.header.active {
+  mix-blend-mode: normal;
+}
+
+.nav__open {
+  color: #FFFFFF;
+}
+
+/* ============================================ 
+top
+/* ============================================ */
+
+img {
+  filter: saturate(0);
+}
+
+.section__title {
+  color: var(--primary-light);
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 3.0rem;
+  font-weight: 700;
+  letter-spacing: 0.18rem;
+  position: relative;
+}
+
+
+.section__title::after {
+  /* content: "ACT"; */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-darkGray);
+  font-family: "Protest Strike";
+  font-size: 12.0rem;
+  font-weight: 400;
+  z-index: -1;
+}
+
+.section {
+  padding: 50px var(--contentPadding);
+}
+
+.section__txt {
+  color: var(--primary-light);
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.19rem;
+  margin-top: 46px;
+  position: relative;
+}
+
+.section__txt::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-darkGray);
+  top: -19px;
+  left: 1px;
+}
+
+.section__txt--act::before {
+  top: -20px;
+  left: 1px;
+}
+
+.section__txt--news::before {
+  top: -20px;
+  left: 5px;
+}
+
+/* ============================================ 
+header
+/* ============================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--contentPadding);
+  align-items: center;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.header.active {
+  mix-blend-mode: normal;
+}
+
+/* ============================================ 
+banner
+/* ============================================ */
+
+.banner {
+  background-color: #222222;
+  background-image: url(../img/noise.svg);
+  padding: 45px var(--contentPadding);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: 1s;
+  z-index: 200;
+  /* transform: translateY(-100%); */
+}
+
+.banner::after {
+  color: #E0E0E0;
+  content: 'Scroll';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.banner__backGround {
+  height: calc(100vh - 90px);
+  filter: saturate(0) grayscale(100%) brightness(30%)!important;
+  position: relative;
+  
+}
+
+.banner__content {
+  position: fixed;
+  width: 80.8%;
+  max-width: 400px;
+  padding: 45px var(--contentPadding);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.banner__content img {
+  width: 80.8%;
+  filter: saturate(1) !important;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+}
+
+.newStage {
+  color: #E0E0E0;
+  font-family: "Protest Strike";
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.newStage__btn {
+  text-align: center;
+  position: relative;
+}
+
+.newStage__btn::before {
+  content: '';
+  position: absolute;
+  background-color: #E0E0E0;
+  width: 70%;
+  height: 60%;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.btn--banner {
+  width: 100%;
+  color: #222222;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn__arrow--banner path {
+  fill: #222222;
+  stroke: #222222;
+}
+
+.banner__date {
+  color: #E0E0E0;
+  text-align: center;
+  font-family: "Ysabeau Office";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 180%;
+}
+
+.btn--round--banner {
+  color: #222222;
+  background-color: #E0E0E0;
+}
+
+.banner.hide {
+  transform: translateY(-100%);
+}
+
+/* ============================================ 
+main
+/* ============================================ */
+
+/* main */
+.mainImg {
+  margin-top: 45px;
+  padding: 0 var(--contentPadding);
+  width: 100%;
+  height: calc(100vh - 90px);
+  position: relative;
+}
+
+.mainLogo_dark,
+.mainLogo_light {
+  position: absolute;
+  width: 66%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0.7;
+}
+
+.mainLogo_light {
+  display: none;
+}
+
+.scrollDown {
+  color: #FFFFFF;
+  mix-blend-mode: difference;
+  position: absolute;
+  bottom: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: "Ysabeau Office";
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.scrollBar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px;
+}
+
+.scrollBar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 75px;
+  background: #fff;
+  mix-blend-mode: difference;
+  animation: liner 2.5s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes liner {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  30% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  70% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}
+
+/* about */
+
+.mainCaption {
+  margin: 285px var(--contentPadding) auto;
+  text-align: center;
+}
+
+.mainCaption__title {
+  font-family: "Zen Kaku Gothic Antique";
+  display: inline-block;
+  width: 280px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.quote_left {
+  position: absolute;
+  left: -15px;
+  top: -8px;
+}
+
+.quote_right {
+  position: absolute;
+  right: 33px;
+  top: -8px;
+}
+
+.mainCaption__title__sub {
+  font-size: 2.0rem;
+  letter-spacing: 0.06rem;
+  margin-left: 10px;
+  font-feature-settings: "palt";
+}
+
+.mainCaption__txt {
+  font-feature-settings: "palt";
+  display: inline-block;
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.4rem;
+  max-width: 375px;
+  position: relative;
+  margin-top: 34px;
+}
+
+.mainCaption__txt::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-gray);
+  top: -16px;
+}
+
+/* act */
+.section__title--act::after {
+  content: "ACT";
+}
+
+.stage__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.stage__content::before {
+  content: "";
+  background-color: var(--primary-black);
+  height: calc(100% - 50px);
+  width: 66%;
+  position: absolute;
+  top: 75px;
+  right: -7%;
+  z-index: -1;
+}
+
+.stage {
+  color: var(--primary-gray);
+  text-align: center;
+  font-family: "Protest Strike";
+  font-size: 3.0rem;
+
+  background-color: var(--primary-light);
+  width: 174px;
+  padding: 2px;
+  margin-top: 100px;
+}
+
+.stage__title {
+  color: var(--primary-light);
+  text-align: center;
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* news */
+.section--news {
+  margin-bottom: 109px;
+}
+
+.section__title--news::after {
+  content: "NEWS";
+}
+
+.news__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 50px 0 30px;
+}
+
+.news__content {
+  background-color: var(--primary-gray);
+  padding: 16px 24px;
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.news__txt {
+  font-family: "Noto Sans JP";
+  font-size: 1.8rem;
+  font-weight: 350;
+  line-height: 1.8;
+  letter-spacing: 0.18rem;
+  margin-top: 8px;
+}
+
+.btn--news {
+  margin-top: 50px;
+}
+
+/* note */
+.section--note {
+  background-color: var(--primary-light);
+  position: relative;
+}
+
+.note__img {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 var(--contentPadding);
+  max-width: 400px;
+}
+
+.section__title--note {
+  color: var(--primary-dark);
+  margin-top: 109px;
+}
+
+.section__txt--note {
+  color: var(--primary-dark);
+}
+
+.note__btn {
+  background-color: var(--primary-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin-top: 30px;
+}
+
+.note__btn img {
+  width: 90px;
+}
+
+.note__logo__light {
+  display: none;
+}
+
+/* ============================================ 
+footer
+/* ============================================ */
+
+.footer__dark {
+  background-color: var(--primary-dark);
+  background-image: url(../img/noise.svg);
+}
+
+.footer__light {
+  display: none;
+}
+
+
+/* ===============================
+ダーク・ライト切り替え
+==================================*/
+/* モード切り替えボタン */
+input[type="checkbox"] {
+  display: block;
+}
+
+.switch {
+  position: fixed;
+}
+
+.switch-mode {
+  position: fixed;
+  left: calc(-75px + var(--contentPadding));
+  bottom: -62.5px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  transform: rotate(0);
+  transition: transform 1s;
+}
+
+.switch-mode::before {
+  content: url("../img/sun.svg");
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.switch-mode::after {
+  content: url("../img/moon.svg");
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* light mode */
+
+.js-mode-light {
+  --primary-white: #111111;
+  --primary-light: #222222;
+  --primary-lightGray: #8B8B8B;
+  --primary-gray: #FFFFFF;
+  --primary-darkGray: #FFFFFF;
+  --primary-dark: #E0E0E0;
+  --primary-black: #FFFFFF;
+  background-color: #E0E0E0;
+}
+
+.js-mode-light img {
+  filter: saturate(0.15);
+}
+
+.js-mode-light .mainLogo_light {
+  display: block;
+}
+
+.js-mode-light .mainLogo_dark {
+  display: none;
+}
+
+
+.js-mode-light .quote path {
+  fill: #FFFFFF;
+}
+
+.js-mode-light .section--note {
+  background-color: #535353;
+}
+
+.js-mode-light .btn__arrow--normal path{
+  fill: #222222;
+  stroke: #222222;
+}
+
+.js-mode-light .note__logo__dark {
+  display: none;
+}
+
+.js-mode-light .note__logo__light {
+  display: block;
+}
+
+.js-mode-light .footer__dark {
+  display: none;
+}
+
+.js-mode-light .footer__light {
+  display: flex;
+}
+
+.js-mode-light .mainCaption__txt::before {
+  background-color: var(--primary-lightGray);
+}
+
+.js-mode-light .stage {
+  background-color: var(--primary-lightGray);
+}
+
+.js-mode-light .section__txt--note::before {
+  background-color: #E0E0E0;
+}

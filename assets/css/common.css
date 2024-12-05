@@ -1,0 +1,254 @@
+@charset "UTF-8";
+/* ============================================ 
+common
+/* ============================================ */
+
+:root {
+  --primary-white: #FFFFFF;
+  --primary-light: #E0E0E0;
+  --primary-lightGray: #8B8B8B;
+  --primary-gray: #535353;
+  --primary-darkGray: #3D3D3D;
+  --primary-dark: #222222;
+  --primary-black: #111111;
+  --contentWidth: 91.4%;
+  --contentPadding: 6.4%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family:
+    'Noto Sans JP';
+  font-style: normal;
+  color: var(--primary-light);
+  line-height: 1;
+
+  /* 背景設定 */
+  background-color: var(--primary-dark);
+  background-image: url(../img/noise.svg);
+  background-size: cover;
+  background-blend-mode: overlay;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.rightBlock {
+  text-align: right;
+}
+
+.centerBlock {
+  text-align: center;
+}
+
+.btn {
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  padding: 12px 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn--round {
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+
+  border-radius: 32px;
+  border: 0.5px solid var(--primary-light);
+}
+
+.btn__arrow--round path {
+  fill: var(--primary-dark);
+  /* fill色を指定 */
+  stroke: var(--primary-dark);
+  /* stroke色を指定 */
+}
+
+.btn__arrow {
+  width: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================ 
+header
+/* ============================================ */
+
+.logo {
+  width: 35px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--contentPadding);
+  align-items: center;
+  background-color: var(--primary-light);
+  z-index: 1;
+}
+
+
+/* ============================================ 
+nav
+/* ============================================ */
+
+.nav {
+  /* mix-blend-mode: normal !important; */
+  background: #222222;
+  background-image: url(../img/noise.svg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  /* transform: translateX(-100%); */
+  opacity: 0;
+  pointer-events: none;
+  /* 非表示のときはクリックできないように */
+  transition: opacity 0.5s ease;
+  /* opacityとmix-blend-modeのアニメーション */
+  /* transition: transform 0.4s; */
+}
+
+.nav__open {
+  color: var(--primary-dark);
+  font-family: "Protest Strike";
+  font-size: 2.0rem;
+}
+
+.nav__close {
+  color: #FFFFFF;
+  font-family: "Protest Strike";
+  font-size: 2.0rem;
+}
+
+.nav__header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--contentPadding);
+  align-items: center;
+  border-bottom: 0.5px solid var(--primary-lightGray);
+}
+
+.logo-nav {
+  width: 97px;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+}
+
+.nav__item {
+  color: #E0E0E0;
+  font-family: "Protest Strike";
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+.nav__footer {
+  padding: var(--contentPadding);
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.5px solid #E0E0E0;
+  position: fixed;
+  bottom: 0;
+}
+
+.nav__sns {
+  display: flex;
+  width: 85px;
+  justify-content: space-between;
+}
+
+.btn--nav {
+  color: #E0E0E0;
+  margin-right: -12px;
+}
+
+/* .nav.active表示 */
+.nav.active {
+  opacity: 1;
+  /* フェードイン */
+  pointer-events: auto;
+  /* 表示されたときにクリックできるように */
+}
+
+/* ============================================ 
+footer
+/* ============================================ */
+
+.footer {
+  padding: 80px var(--contentPadding) 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.footer__sns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 223px;
+  height: 30px;
+}
+
+.footer__sns img {
+  width: 30px;
+}
+
+.footer__txt {
+  text-align: center;
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+}
+
+.term-privacy {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.privacy {
+  border-left: 1.5px solid var(--primary-light);
+  padding-left: 10px;
+}
+
+.copy {
+  margin-top: 13px;
+}
+
+.footer__light {
+  display: none;
+}

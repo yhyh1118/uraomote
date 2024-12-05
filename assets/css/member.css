@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* ============================================ 
+member
+/* ============================================ */
+
+
+
+
+
+
+/* ============================================ 
+member__footer
+/* ============================================ */
+
+.footer__dark {
+  display: none;
+}
+
+.footer {
+  background-color: var(--primary-light);
+  color: #222222;
+}
+
+.privacy {
+  border-left: 1.5px solid #222222;
+}
+
+.footer__light {
+  display: flex;
+}
