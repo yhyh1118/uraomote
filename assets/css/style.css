@@ -161,6 +161,32 @@ header
   z-index: 1;
 }
 
+.header.active {
+  mix-blend-mode: normal;
+}
+
+/* dark-light */
+.dark-light {
+  position: fixed;
+  left: calc(-75px + var(--contentPadding));
+  bottom: 7.5px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  transform: rotate(0deg);
+  transition: transform 2s ease;
+}
+
+.dark-light.switch {
+  transform: rotate(180deg); /* 回転角度 */
+}
+
+.dark-light img {
+  width: 25px;
+  height: 25px;
+}
+
+
 /* ============================================ 
 nav
 /* ============================================ */
@@ -175,8 +201,11 @@ nav
   width: 100%;
   height: 100vh;
   z-index: 100;
-  transform: translateX(-100%);
-  transition: transform 0.4s;
+  /* transform: translateX(-100%); */
+  opacity: 0;
+  pointer-events: none; /* 非表示のときはクリックできないように */
+  transition: opacity 0.5s ease; /* opacityとmix-blend-modeのアニメーション */
+  /* transition: transform 0.4s; */
 }
 
 .nav__open,
@@ -229,6 +258,16 @@ nav
   display: flex;
   width: 85px;
   justify-content: space-between;
+}
+
+.btn--nav {
+  
+}
+
+/* .nav.active表示 */
+.nav.active {
+  opacity: 1; /* フェードイン */
+  pointer-events: auto; /* 表示されたときにクリックできるように */
 }
 
 /* ============================================ 
@@ -448,7 +487,7 @@ main
   width: 66%;
   position: absolute;
   top: 75px;
-  right: 0;
+  right: -7%;
   z-index: -1;
 }
 
@@ -522,6 +561,7 @@ main
   left: 50%;
   transform: translateX(-50%);
   padding: 0 var(--contentPadding);
+  max-width: 400px;
 }
 
 .section__title--note {
