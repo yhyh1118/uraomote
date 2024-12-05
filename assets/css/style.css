@@ -827,7 +827,11 @@ footer
   display: flex;
 }
 
-.js-mode-light .mainCaption__txt::before, .stage {
+.js-mode-light .mainCaption__txt::before {
+  background-color: var(--primary-lightGray);
+}
+
+.js-mode-light .stage {
   background-color: var(--primary-lightGray);
 }
 

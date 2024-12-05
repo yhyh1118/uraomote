@@ -15,6 +15,25 @@
             }, 400);
         });
 
+
+
+        //dark-light
+        $('.moon').on('click', function () {
+            $('.dark-light').addClass('switch');
+        });
+
+        $('.sun').on('click', function () {
+            $('.dark-light').removeClass('switch');
+        });
+
+
+        ///////////////////////////////////////////////////////////////////////
+
+
+
+        // ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         // banner
         var pos = 0; // 前回のスクロール位置
         var banner = $('.banner');
@@ -47,8 +66,8 @@
             $('main').css('overflow', 'auto'); // スクロールを有効化
         });
 
+        // お試しlight-dark/
 
-        // light-dark/
         // 要素やクラスを指定しておく
         const checkToggle = document.getElementById('js_mode_toggle');
         const rotateIcon = document.getElementById('js_rotate');
@@ -118,5 +137,10 @@
             nowRotate += 180;
             rotateIcon.style.transform = 'rotate(' + nowRotate + 'deg)';
         }
+
+
+        // 
+
+
     });
 }
