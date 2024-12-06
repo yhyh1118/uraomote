@@ -238,10 +238,12 @@ footer
 .footer--dark {
   background-color: var(--primary-dark);
   background-image: url(../img/noise.svg);
+  color: var(--primary-light);
 }
 
 .footer--light {
   background-color: var(--primary-light);
+  color: #222222;
 }
 
 .footer__sns {
@@ -259,7 +261,6 @@ footer
 .footer__txt {
   text-align: center;
   font-family: "Ysabeau Office";
-  color: var(--primary-light);
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.15rem;
@@ -272,7 +273,7 @@ footer
 }
 
 .privacy {
-  border-left: 1.5px solid var(--primary-light);
+  border-left: 1px solid var(--primary-light);
   padding-left: 10px;
 }
 

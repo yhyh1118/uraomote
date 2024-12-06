@@ -1,0 +1,490 @@
+@charset "UTF-8";
+
+
+/* ============================================ 
+common
+/* ============================================ */
+
+#light {
+    background-color: var(--primary-light);
+    background-image: none;
+    color: var(--primary-dark);
+}
+
+#dark {
+    color: var(--primary-light);
+}
+
+/* ============================================ 
+act
+/* ============================================ */
+
+.page__title::before {
+    content: "公演情報";
+}
+
+.act__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 100px var(--contentPadding) 80px;
+}
+
+.act__item {
+    max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--primary-lightGray);
+}
+
+.act__title {
+    text-align: center;
+    font-family: "Zen Kaku Gothic Antique";
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.act__txt {
+    color: var(--primary-gray);
+    font-size: 2.0rem;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.18rem;
+}
+
+.act__time {
+    text-align: right;
+    font-family: "Ysabeau Office";
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* ============================================ 
+stage
+/* ============================================ */
+
+.stage__flyer {
+    padding: 75px var(--contentPadding) 0;
+}
+
+.stage__content {
+    padding: 30px var(--contentPadding) 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.stage__name {
+    font-family: "Zen Kaku Gothic Antique";
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.stage__title {
+    font-family: "Zen Kaku Gothic Antique";
+    font-size: 4.0rem;
+    font-weight: 700;
+}
+
+.stage__date {
+    color: var(--primary-gray);
+    font-family: "Ysabeau Office";
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 180%;
+    position: relative;
+}
+
+.line {
+    background-color: var(--primary-lightGray);
+    width: 100%;
+    height: 1px;
+}
+
+.section--story {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 50px var(--contentPadding);
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    position: relative;
+}
+
+.story__title {
+    position: absolute;
+    top: -70px;
+    left: -17px;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    color: var(--primary-darkGray);
+    font-family: "Protest Strike";
+    font-size: 12.0rem;
+}
+
+.story__summary {
+    font-family: "Zen Kaku Gothic Antique";
+    font-size: 2.4rem;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.story__synopsis {
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.19rem;
+    z-index: 1;
+}
+
+.info {
+    padding: 30px var(--contentPadding);
+}
+
+.info__title {
+    font-family: "Protest Strike";
+    font-size: 7.0rem;
+    text-align: left;
+}
+
+.info__list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.info__content__title {
+    font-family: "Ysabeau Office";
+    font-size: 3.6rem;
+    font-weight: 600;
+}
+
+.info__content__txt {
+    margin-top: 8px;
+    color: var(--primary-gray);
+    font-family: "Ysabeau Office";
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.16rem;
+}
+
+.btn__zone {
+    padding: 0 var(--contentPadding) 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn--back svg {
+    transform: rotate(180deg);
+}
+
+.btn--back path {
+    fill: var(--primary-dark);
+    stroke: var(--primary-dark);
+}
+
+.btn--stage {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+}
+
+.btn--stage path {
+    fill: var(--primary-light);
+    stroke: var(--primary-light);
+}
+
+/* ============================================ 
+member
+/* ============================================ */
+
+.page__title--member {
+    color: var(--primary-light);
+}
+
+.page__title::before {
+    content: "団員紹介";
+    color: var(--primary-lightGray);
+}
+
+.member__category {
+    margin: 60px auto 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 279px;
+    font-family: "Ysabeau Office";
+    color: var(--primary-gray);
+    font-size: 2.0rem;
+    font-weight: 600;
+}
+
+.select {
+    color: var(--primary-light);
+    position: relative;
+}
+
+.select::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-light);
+    border-radius: 3px;
+    width: 3px;
+    height: 3px;
+}
+
+.select::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-light);
+    bottom: -1px;
+    left: 0;
+}
+
+.member__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 auto 80px;
+}
+
+.member__item {
+    max-width: 390px;
+}
+
+.member__card {
+    position: relative;
+}
+
+.member__card::after {
+    content: '';
+    position: absolute;
+    top: 48px;
+    right: 0;
+    background-color: var(--primary-gray);
+    width: var(--contentWidth);
+    height: calc(100% - 32px);
+    z-index: -1;
+}
+
+
+.member__img {
+    padding-right: var(--contentPadding);
+}
+
+.member__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px var(--contentPadding) 0 12.8%;
+}
+
+.member__name {
+    text-align: center;
+    font-family: "Zen Kaku Gothic Antique";
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    margin-top: 16px;
+    margin-right: var(--contentPadding);
+    position: relative;
+}
+
+.member__txt {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    letter-spacing: 0.16rem;
+    margin: 16px 8px 0;
+}
+
+.member__sns {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 10px;
+    align-items: center;
+}
+
+.member__sns img {
+    width: 20px;
+    height: 18.126px;
+}
+
+/* ============================================ 
+news
+/* ============================================ */
+
+.page__title--news {
+    color: var(--primary-light);
+}
+
+.page__title--news::before {
+    content: "お知らせ";
+    color: var(--primary-lightGray);
+}
+
+.news__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px auto 80px;
+    background-color: var(--primary-light);
+}
+
+.news__item {
+    padding: 12px var(--contentPadding);
+    color: var(--primary-dark);
+    border-bottom: 1px solid var(--primary-gray);
+}
+
+.news__date {
+    color: var(--primary-lightGray);
+    font-family: "Protest Strike";
+    font-size: 1.3rem;
+}
+
+.news__title {
+    margin: 4px 0 0 10px;
+    color: var(--primary-dark);
+    font-size: 2.0rem;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.18rem;
+}
+
+.news__open {
+    height: 14px;
+    position: relative;
+}
+
+.news__open::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-gray);
+    width: 12px;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.news__txt {
+
+    padding-left: 10px;
+    color: var(--primary-gray);
+    font-size: 1.6rem;
+    line-height: 1.8;
+    letter-spacing: 0.16rem;
+}
+
+/* ============================================ 
+contact
+/* ============================================ */
+
+.page__title--contact::before {
+    content: "お問い合わせ";
+    color: var(--primary-gray);
+}
+
+.contact__content {
+    align-items: center;
+    gap: 40px;
+    margin: 100px var(--contentPadding) 80px;
+
+}
+
+.contact__txt {
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.18rem;
+    color: var(--primary-gray);
+}
+
+.contact__form {
+    background-color: red;
+    max-width: 500px;
+    height: 500px;
+}
+
+.line__title {
+    margin-top: 24px;
+    font-family: "Protest Strike";
+    font-size: 5.0rem;
+    line-height: 1y;
+}
+
+.line__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.line__form img {
+    width: 66%;
+    text-align: center;
+}
+
+/* ============================================ 
+terms
+/* ============================================ */
+
+.page__title--terms,
+.page__title--privacy {
+    font-size: 4.5rem;
+}
+
+.page__title--terms::before {
+    content: "劇団うらおもて規約";
+    font-size: 1.4rem;
+    color: var(--primary-gray);
+
+}
+
+.page__title--privacy::before {
+    content: "個人情報取り扱いについて";
+    font-size: 1.4rem;
+    color: var(--primary-gray);
+}
+
+.terms__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 100px var(--contentPadding) 80px;
+    color: var(--primary-gray);
+}
+
+.terms__title {
+    font-family: "Zen Kaku Gothic Antique";
+    font-size: 2.0rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.terms__txt {
+    margin-top: 5px;
+    color: var(--primary-gray);
+    font-size: 2.0rem;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.18rem;
+}
