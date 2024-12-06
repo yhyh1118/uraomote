@@ -233,6 +233,8 @@ footer
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  background-color: var(--primary-dark);
+  background-image: url(../img/noise.svg);
 }
 
 .footer__sns {
