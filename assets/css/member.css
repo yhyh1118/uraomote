@@ -142,15 +142,18 @@ member__footer
   display: none;
 }
 
+.footer__light {
+  display: flex;
+}
+
 .footer {
   background-color: var(--primary-light);
-  color: #222222;
+}
+
+.footer__txt {
+color: var(--primary-dark);
 }
 
 .privacy {
-  border-left: 1.5px solid #222222;
-}
-
-.footer__light {
-  display: flex;
+  border-left: 1.5px solid var(--primary-gray);
 }

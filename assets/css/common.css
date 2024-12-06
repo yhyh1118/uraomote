@@ -234,7 +234,6 @@ footer
   gap: 30px;
   align-items: center;
   background-color: var(--primary-dark);
-  background-image: url(../img/noise.svg);
 }
 
 .footer__sns {
@@ -252,6 +251,7 @@ footer
 .footer__txt {
   text-align: center;
   font-family: "Ysabeau Office";
+  color: var(--primary-light);
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.15rem;
