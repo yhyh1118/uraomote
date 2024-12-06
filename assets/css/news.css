@@ -17,80 +17,56 @@ news
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
   margin: 100px auto 80px;
+  background-color: var(--primary-light);
 }
 
 .news__item {
-  max-width: 390px;
+  padding: 12px var(--contentPadding);
+  color: var(--primary-dark);
+  border-bottom: 1px solid var(--primary-gray);
 }
 
-.news__card {
+.news__date {
+  color: var(--primary-lightGray);
+  font-family: "Protest Strike";
+  font-size: 1.3rem;
+}
+
+.news__title {
+  margin: 4px 0 0 10px;
+  color: var(--primary-dark);
+  font-size: 2.0rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.18rem;
+}
+
+.news__open {
+  height: 14px;
   position: relative;
 }
 
-.news__card::after {
+.news__open::after {
   content: '';
   position: absolute;
-  top: 48px;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: var(--primary-gray);
-  width: var(--contentWidth);
-  height: calc(100% - 32px);
-  /* 固定幅に変更
-  height: 50%; */
-  /* 固定高さに変更 */
-  /* aspect-ratio: 4 / 3; */
-  z-index: -1;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
 }
-
-
-.news__img {
-  padding-right: var(--contentPadding);
-}
-
-
-
-.news__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 16px var(--contentPadding) 0 12.8% ;
-}
-
-.news__name {
-  text-align: center;
-  font-family: "Zen Kaku Gothic Antique";
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 0.25rem;
-  margin-top: 16px;
-  margin-right: var(--contentPadding);
-  position: relative;
-}
-
-
 
 .news__txt {
+
+  padding-left: 10px;
+  color: var(--primary-gray);
   font-size: 1.6rem;
   line-height: 1.8;
   letter-spacing: 0.16rem;
-  margin: 16px 8px 0;
 }
-
-.news__sns {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  gap: 10px;
-  align-items: center;
-}
-
-.news__sns img {
-  width: 20px;
-  height: 18.126px;
-}
-
 
 
 
@@ -112,7 +88,7 @@ news__footer
 }
 
 .footer__txt {
-color: var(--primary-dark);
+  color: var(--primary-dark);
 }
 
 .privacy {

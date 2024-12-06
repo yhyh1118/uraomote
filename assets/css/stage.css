@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* ============================================ 
+act
+/* ============================================ */
+
+body {
+    background-color: var(--primary-light);
+    background-image: none;
+    color: var(--primary-dark);
+}
+
+.page__title--info {
+    margin-top: 146px;
+    color: var(--primary-dark);
+    font-family: "Protest Strike";
+    font-size: 7.0rem;
+    position: relative;
+    text-align: center;
+  }
+
+.stage__flyer {
+    padding: 75px var(--contentPadding) 0;
+}
+
+.section--story {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 50px var(--contentPadding);
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    position: relative;
+}
+
+.story__title {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    transform: rotate(90deg);
+    color: var(--primary-gray);
+    font-family: "Protest Strike";
+    font-size: 12.0rem;
+}
+
+.story__summary {
+    font-family: "Zen Kaku Gothic Antique";
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.synopsis {
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.19rem;
+}
