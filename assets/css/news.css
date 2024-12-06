@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/* ============================================ 
+news
+/* ============================================ */
+
+.page__title--news {
+  color: var(--primary-light);
+}
+
+.page__title::before {
+  content: "お知らせ";
+  color: var(--primary-lightGray);
+}
+
+.news__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  margin: 100px auto 80px;
+}
+
+.news__item {
+  max-width: 390px;
+}
+
+.news__card {
+  position: relative;
+}
+
+.news__card::after {
+  content: '';
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background-color: var(--primary-gray);
+  width: var(--contentWidth);
+  height: calc(100% - 32px);
+  /* 固定幅に変更
+  height: 50%; */
+  /* 固定高さに変更 */
+  /* aspect-ratio: 4 / 3; */
+  z-index: -1;
+}
+
+
+.news__img {
+  padding-right: var(--contentPadding);
+}
+
+
+
+.news__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px var(--contentPadding) 0 12.8% ;
+}
+
+.news__name {
+  text-align: center;
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  margin-top: 16px;
+  margin-right: var(--contentPadding);
+  position: relative;
+}
+
+
+
+.news__txt {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  letter-spacing: 0.16rem;
+  margin: 16px 8px 0;
+}
+
+.news__sns {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 10px;
+  align-items: center;
+}
+
+.news__sns img {
+  width: 20px;
+  height: 18.126px;
+}
+
+
+
+
+
+/* ============================================ 
+news__footer
+/* ============================================ */
+
+.footer__dark {
+  display: none;
+}
+
+.footer__light {
+  display: flex;
+}
+
+.footer {
+  background-color: var(--primary-light);
+}
+
+.footer__txt {
+color: var(--primary-dark);
+}
+
+.privacy {
+  border-left: 1.5px solid var(--primary-gray);
+}
