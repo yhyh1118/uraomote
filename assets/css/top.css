@@ -15,6 +15,10 @@ Top_header, nav
   mix-blend-mode: normal;
 }
 
+.header.active {
+  mix-blend-mode: normal;
+}
+
 .nav__open {
   color: #FFFFFF;
 }
@@ -82,27 +86,6 @@ img {
 .section__txt--news::before {
   top: -20px;
   left: 5px;
-}
-
-/* ============================================ 
-header
-/* ============================================ */
-
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 45px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 var(--contentPadding);
-  align-items: center;
-  mix-blend-mode: difference;
-  z-index: 1;
-}
-
-.header.active {
-  mix-blend-mode: normal;
 }
 
 /* ============================================ 
@@ -535,7 +518,6 @@ input[type="checkbox"] {
 .js-mode-light {
   --primary-white: #111111;
   --primary-light: #222222;
-  --primary-lightGray: #8B8B8B;
   --primary-gray: #FFFFFF;
   --primary-darkGray: #FFFFFF;
   --primary-dark: #E0E0E0;
