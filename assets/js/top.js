@@ -24,7 +24,7 @@
                     isForcedScroll = true;
                     window.scrollTo(0,0);
                     
-                    //1後に、
+                    //1.5後に、スクロール有効か
                     setTimeout(function(){
                         isForcedScroll = false;
                         $('body').css('overflow', 'auto');
@@ -45,7 +45,7 @@
         const checkToggle = document.getElementById('js_mode_toggle');
         const rotateIcon = document.getElementById('js_rotate');
         const classLight = 'js-mode-light';
-        const keyLocalStorage = 'whike-theme-mode';
+        const keyLocalStorage = 'uraomote-theme-mode';
         let nowRotate = 0;
 
         if (localStorage.getItem(keyLocalStorage) === 'light') {
@@ -61,6 +61,7 @@
             checkToggle.checked = true;
         }
 
+        //ダークライト回転！！！
         checkToggle.addEventListener('change', function (e) {
             nowRotate += 180;
             rotateIcon.style.transform = `rotate(${nowRotate}deg)`;
