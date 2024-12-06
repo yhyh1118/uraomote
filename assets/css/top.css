@@ -462,12 +462,7 @@ main
 footer
 /* ============================================ */
 
-.footer__dark {
-  background-color: var(--primary-dark);
-  background-image: url(../img/noise.svg);
-}
-
-.footer__light {
+.footer--light {
   display: none;
 }
 
@@ -559,12 +554,13 @@ input[type="checkbox"] {
   display: block;
 }
 
-.js-mode-light .footer__dark {
+.js-mode-light .footer--dark {
   display: none;
 }
 
-.js-mode-light .footer__light {
+.js-mode-light .footer--light {
   display: flex;
+  background-color: #E0E0E0;
 }
 
 .js-mode-light .mainCaption__txt::before {

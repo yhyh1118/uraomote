@@ -16,7 +16,6 @@ body {
 }
 
 .contact__content {
-
     align-items: center;
     gap: 40px;
     margin: 100px var(--contentPadding) 80px;
