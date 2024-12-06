@@ -82,7 +82,7 @@ img {
 }
 
 .page__title {
-  margin-top: 126px;
+  margin-top: 146px;
   color: var(--primary-dark);
   font-family: "Protest Strike";
   font-size: 7.0rem;
@@ -257,7 +257,7 @@ footer
   letter-spacing: 0.15rem;
 }
 
-.term-privacy {
+.terms {
   display: flex;
   flex-direction: row;
   gap: 10px;
