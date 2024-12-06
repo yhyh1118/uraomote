@@ -1,18 +1,6 @@
 'use strict';
 {
     $(function () {
-        // ハンバーガーメニューの開閉処理
-        $('.nav__open').on('click', function () {
-            $('.nav').toggleClass('active');
-            $('.header').toggleClass('active');
-        });
-
-        $('.nav__close, .nav__item a').on('click', function () {
-            $('.nav').removeClass('active');
-            setTimeout(function () {
-                $('.header').removeClass('active');
-            }, 400);
-        });
 
         // バナー表示・非表示の切り替え処理
         var pos = 0; // 前回のスクロール位置

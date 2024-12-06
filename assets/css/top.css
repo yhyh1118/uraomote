@@ -8,6 +8,7 @@ Top_header, nav
 .header {
   mix-blend-mode: difference;
   background-color: transparent;
+  border-bottom:transparent;
 }
 
 .header.active {

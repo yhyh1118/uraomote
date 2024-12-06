@@ -1,8 +1,15 @@
 'use strict';
 {
-
     $(function () {
-        // humburger
+
+        $(document).ready(function() {
+            var element = $('#targetElement');
+            if (element.length > 0) {
+                element[0].style.color = 'red'; // 要素が存在する場合のみ実行
+            }
+         });
+
+        // ハンバーガーメニューの開閉処理
         $('.nav__open').on('click', function () {
             $('.nav').toggleClass('active');
             $('.header').toggleClass('active');
@@ -15,132 +22,76 @@
             }, 400);
         });
 
-
-
-        //dark-light
-        $('.moon').on('click', function () {
-            $('.dark-light').addClass('switch');
-        });
-
-        $('.sun').on('click', function () {
-            $('.dark-light').removeClass('switch');
-        });
-
-
-        ///////////////////////////////////////////////////////////////////////
-
-
-
-        // ///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-        // banner
+        // バナー表示・非表示の切り替え処理
         var pos = 0; // 前回のスクロール位置
         var banner = $('.banner');
-        var clicked = false; // クリックされたかどうかのフラグ
+        var isForcedScroll = false;
 
-        function toggleBannerAndScroll() {
+        $(window).on('scroll', function () {
             var scrollTop = $(window).scrollTop();
 
+            //強制スクロール中は何もしない
+            if (isForcedScroll) return;
+
             if (banner.hasClass('hide') && scrollTop === 0 && scrollTop < pos) {
-                // ページの一番上で上にスクロールしたときにバナーを表示する
-                banner.removeClass('hide');
+                banner.removeClass('hide'); // 上にスクロールしてページの上部に来たらバナーを表示
+            } else if (!banner.hasClass('hide') && scrollTop > pos) {
+                banner.addClass('hide'); // 下にスクロールでバナーを非表示
+                $('body').css('overflow', 'hidden');
 
-            } else if (!banner.hasClass('hide') && (scrollTop > pos)) {
-                // 下にスクロールしたとき、かつバナーが非表示になったとき、またはクリックされたときにスクロールを有効化
-                banner.addClass('hide');
-                $('body').css('overflow', 'hidden'); // スクロールを無効化
+                //0.1s後にトップにスクロール
                 setTimeout(function () {
-                    $('body').css('overflow', 'auto'); // スクロールを再度有効化
-                }, 1100); // 3000ミリ秒 (3秒) 後に実行
+                    isForcedScroll = true;
+                    window.scrollTo(0,0);
+                    
+                    //1後に、
+                    setTimeout(function(){
+                        isForcedScroll = false;
+                        $('body').css('overflow', 'auto');
+                    },1500);
+                }, 100);
             }
+
             pos = scrollTop; // 現在の位置を保存
-        }
-
-        // スクロールとクリックイベントで同じ処理を呼び出す
-        $(window).on('scroll', toggleBannerAndScroll);
-
-        banner.on('click', function () {
-            // clicked = true; // クリックされたフラグを立てる
-            banner.addClass('hide'); // バナーを非表示にする
-            $('main').css('overflow', 'auto'); // スクロールを有効化
         });
 
-        // お試しlight-dark/
+        banner.on('click', function () {
+            banner.addClass('hide'); // バナーを非表示にする
+            $('main').css('overflow', 'auto'); // スクロールを再度有効化
+        });
 
-        // 要素やクラスを指定しておく
+
+        // ライト・ダークモード切り替え
         const checkToggle = document.getElementById('js_mode_toggle');
         const rotateIcon = document.getElementById('js_rotate');
         const classLight = 'js-mode-light';
-
-        // デバイスがライトモードかどうかチェック
-        const isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-        // ローカルストレージに保存するための適当なKey名
         const keyLocalStorage = 'whike-theme-mode';
-
-        // ローカルストレージの情報を取得
-        const localTheme = localStorage.getItem(keyLocalStorage);
-
-        // 絵文字を回転させる角度
         let nowRotate = 0;
 
-        // ローカルストレージの中身と、端末がライトモードかどうか（ie,edgeには無意味）をチェック
-        if (localTheme === 'light') {
-            // ローカルストレージの情報が優先
-            rotateInfinite();
-            changeMode('light');
-        } else if (localTheme === 'dark') {
-            changeMode('dark');
-        } else if (isLight) {
-            rotateInfinite();
-            changeMode('light');
+        if (localStorage.getItem(keyLocalStorage) === 'light') {
+            rotateIcon.style.transform = 'rotate(180deg)';
+            document.body.classList.add(classLight);
+            checkToggle.checked = true;
+        } else if (localStorage.getItem(keyLocalStorage) === 'dark') {
+            document.body.classList.remove(classLight);
+            checkToggle.checked = false;
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            rotateIcon.style.transform = 'rotate(180deg)';
+            document.body.classList.add(classLight);
+            checkToggle.checked = true;
         }
 
-        // チェックボックスでの切り替え、選択をローカルストレージに保存
-        // モード切替スイッチが変更されたら発動
         checkToggle.addEventListener('change', function (e) {
-            // 絵文字大回転
-            rotateInfinite();
+            nowRotate += 180;
+            rotateIcon.style.transform = `rotate(${nowRotate}deg)`;
 
-            // チェックされたらライトモード、されなければダークモードにし、ローカルストレージにどちらを選んだか保存する
             if (e.target.checked) {
-                changeMode('light');
+                document.body.classList.add(classLight);
                 localStorage.setItem(keyLocalStorage, 'light');
             } else {
-                changeMode('dark');
+                document.body.classList.remove(classLight);
                 localStorage.setItem(keyLocalStorage, 'dark');
             }
         });
-
-        /**
-         * テーマ切り替え
-         * @param {String} mode 'light' もしくは 'dark'
-         */
-        function changeMode(mode) {
-            // 引数にしたがってbodyにクラスをつける
-            // チェックボックス経由で変更かかったときはいいんだけど、ローカルストレージとかからモードを変えた場合にチェック状態がおかしくなるので、合わせておく
-            if (mode === 'light') {
-                document.body.classList.add(classLight);
-                checkToggle.checked = true;
-            } else if (mode === 'dark') {
-                document.body.classList.remove(classLight);
-                checkToggle.checked = false;
-            }
-        }
-
-        /**
-         * 月と太陽アイコン無限回転
-         * 呼ばれるたびに180度角度が追加されていく
-         */
-        function rotateInfinite() {
-            nowRotate += 180;
-            rotateIcon.style.transform = 'rotate(' + nowRotate + 'deg)';
-        }
-
-
-        // 
-
-
     });
 }

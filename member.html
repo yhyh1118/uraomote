@@ -75,46 +75,69 @@
     </header>
 
     <main class="main">
-
       <article class="article">
-        <h3>団員紹介</h3>
-        <h2>MEMBER</h2>
+        <!-- <h3">団員紹介</h3> -->
+        <h2 class="page__title page__title--member">MEMBER</h2>
 
-        <ul>
-          <li>All</li>
-          <li>Cast</li>
-          <li>Staff</li>
+        <ul class="member__category">
+          <li class="category">All</li>
+          <li class="category select">Cast</li>
+          <li class="category">Staff</li>
         </ul>
 
-        <ul>
-          <li>
-            <img src="assets/img/member/watanaka2.png" alt="">
-            <h3>綿中ヒロミ</h3>
-            <p>主宰。千葉県出身。
-              13歳から10年間都内小劇場で役者として活動したのち仕事に専念。転職を機にうらおもてを立ち上げた。趣味は映画鑑賞（最近はMARVELをよく観る）、クイズ、スノーボード。</p>
+        <ul class="member__list">
+          <li class="member__item">
+            <div class="member__card">
+              <img class="member__img" src="assets/img/member/watanaka2.png" alt="">
+              <h3 class="member__name">綿中ヒロミ</h3>
+            </div>
+            <div class="member__content">
+              <p class="member__txt">主宰。千葉県出身。
+                13歳から10年間都内小劇場で役者として活動したのち仕事に専念。転職を機にうらおもてを立ち上げた。趣味は映画鑑賞（最近はMARVELをよく観る）、クイズ、スノーボード。</p>
+              <div class="member__sns">
+                <img src="assets/img/instagram.svg" alt="">
+                <img src="assets/img/twitter.svg" alt="">
+              </div>
+            </div>
           </li>
+
+          <li class="member__item">
+            <div class="member__card">
+              <img class="member__img" src="assets/img/member/makimura.png" alt="">
+              <h3 class="member__name">牧村 洋平</h3>
+            </div>
+            <div class="member__content">
+              <p class="member__txt">
+                ​​役者。
+                ビリー・ジョエルをこよなく愛している。
+              </p>
+              <div class="member__sns">
+                <img src="assets/img/twitter.svg" alt="">
+                <img src="assets/img/instagram.svg" alt="">
+              </div>
+            </div>
+          </li>
+
+          <li class="member__item">
+            <div class="member__card">
+              <img class="member__img" src="assets/img/member/simano2.png" alt="">
+              <h3 class="member__name">島野 紡</h3>
+            </div>
+            <div class="member__content">
+              <p class="member__txt">
+                ​役者。茨城県出身。太宰治に誘（いざな）われ、演劇の世界へ。無類のあんこ好き。
+              </p>
+              <div class="member__sns">
+                <img src="assets/img/twitter.svg" alt="">
+                <img src="assets/img/instagram.svg" alt="">
+              </div>
+            </div>
+          </li>
+
         </ul>
       </article>
 
       <!-- footer -->
-      <footer class="footer footer__dark">
-        <img class="footer__logo" src="assets/img/logo_white3.svg" alt="">
-        <ul class="footer__sns">
-          <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/instagram.svg" alt="Instagram"></a>
-          </li>
-          <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/twitter.svg" alt="Twitter"></a></li>
-          <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/youtube.svg" alt="YouTube"></a></li>
-        </ul>
-        <div class="footer__txt">
-          <div class="term-privacy">
-            <a class="term" href="#">Term of use</a>
-            <a class="privacy" href="#">Privacy Policy</a>
-          </div>
-          <!-- コピーライト -->
-          <p class="copy"><small>&copy;2024 uraomote.</small></p>
-        </div>
-      </footer>
-
       <footer class="footer footer__light">
         <img class="footer__logo" src="assets/img/logo_black3.svg" alt="">
         <ul class="footer__sns">
@@ -138,7 +161,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
 </body>
 
 </html>

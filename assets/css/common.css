@@ -81,6 +81,26 @@ img {
   align-items: center;
 }
 
+.page__title {
+  margin-top: 126px;
+  color: var(--primary-dark);
+  font-family: "Protest Strike";
+  font-size: 7.0rem;
+  position: relative;
+  text-align: center;
+}
+
+.page__title::before {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary-gray);
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
 /* ============================================ 
 header
 /* ============================================ */
@@ -99,6 +119,7 @@ header
   padding: 0 var(--contentPadding);
   align-items: center;
   background-color: var(--primary-light);
+  border-bottom: 1px solid #8B8B8B;
   z-index: 1;
 }
 
