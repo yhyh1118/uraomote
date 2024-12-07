@@ -144,8 +144,9 @@
         <!-- about -->
         <section id="about" class="section">
           <div class="mainCaption">
-            <div class="mainCaption__title">
-              <h2>劇団うらおもて<span class="mainCaption__title__sub">とは</span></h2>
+
+            <div id="stopScroll" class="mainCaption__title rellax" data-rellax-speed="-6" data-rellax-percentage="2">
+              <h2>劇団うらおもて<span class="mainCaption__subTitle">とは</span></h2>
               <svg class="quote quote_left" xmlns="http://www.w3.org/2000/svg" width="17" height="12"
                 viewBox="0 0 17 12" fill="none">
                 <path
@@ -158,11 +159,18 @@
                   d="M11.9032 12.5392L14.3133 7.67283L10.6705 7.68666L10.6429 0.400995L17.9285 0.373343L17.9562 7.65901L15.5461 12.5253L11.9032 12.5392ZM2.18901 12.576L4.59913 7.7097L0.956298 7.72353L0.928646 0.437864L8.21431 0.410212L8.24196 7.69587L5.83184 12.5622L2.18901 12.576Z"
                   fill="#3D3D3D" />
               </svg>
+              <p class="mainCaption__txt">ものごとの多面性に注目した表現を通して、さまざまな思い込みやしがらみから自由になり、見た人が少しだけ生きやすくなることを目標としている。</p>
             </div>
-            <p class="mainCaption__txt">ものごとの多面性に注目した表現を通して、さまざまな思い込みやしがらみから自由になり、見た人が少しだけ生きやすくなることを目標としている。</p>
+
+            <img class="a rellax" data-rellax-speed="-5.5" src="assets/img/stage/a.JPG" alt="">
+            <img class="b rellax" data-rellax-speed="-5.1" src="assets/img/stage/b.JPG" alt="">
+            <img class="c rellax" data-rellax-speed="0" src="assets/img/stage/c.webp" alt="">
+            <img class="d rellax" data-rellax-speed="6" src="assets/img/stage/d.JPG" alt="">
+            <img class="e rellax" data-rellax-speed="9" src="assets/img/stage/e.JPG" alt="">
+            <img class="f rellax" data-rellax-speed="-3" src="assets/img/stage/f.JPG" alt="">
+
           </div>
-          <div class="scroll_img">
-          </div>
+
         </section>
 
         <!-- scroll_img -->
@@ -172,7 +180,7 @@
         <section class="section section--act">
           <!-- <h3 class="section__title__en">ACT</h3> -->
           <h2 class="section__title section__title--act">公演情報</h2>
-          <p class="section__txt section__txt--act">劇団の活動情報をお伝えします。</p>
+          <!-- <p class="section__txt section__txt--act">劇団の活動情報をお伝えします。</p> -->
 
           <div class="stage__content">
             <div class="stage">NEW STAGE</div>
@@ -210,7 +218,7 @@
         <!-- news -->
         <section class="section section--news">
           <h2 class="section__title section__title--news">お知らせ</h2>
-          <p class="section__txt section__txt--news">活動の最新情報をお知らせします。</p>
+          <!-- <p class="section__txt section__txt--news">活動の最新情報をお知らせします。</p> -->
 
 
           <ul class="news__list">
@@ -306,9 +314,9 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="assets/js/rellax.min.js"></script>
   <script src="assets/js/header.js"></script>
   <script src="assets/js/top.js"></script>
-  <script src="js/rellax.min.js"></script>
 </body>
 
 </html>
