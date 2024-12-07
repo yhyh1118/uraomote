@@ -64,7 +64,7 @@ act
 }
 
 /* ============================================ 
-stage
+stage, archive
 /* ============================================ */
 
 .stage__flyer {
@@ -113,6 +113,7 @@ stage
     align-items: center;
     padding: 50px var(--contentPadding);
     background-color: var(--primary-dark);
+    background-image: url(../img/noise.svg);
     color: var(--primary-light);
     position: relative;
 }
@@ -141,6 +142,19 @@ stage
     line-height: 1.8;
     letter-spacing: 0.19rem;
     z-index: 1;
+}
+
+.gallery {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.gallery__title {
+    font-family: "Protest Strike";
+    font-size: 7.0rem;
+    text-align: left;
 }
 
 .info {
@@ -213,7 +227,7 @@ member
 
 .page__title::before {
     content: "団員紹介";
-    color: var(--primary-lightGray);
+    color: var(--primary-gray);
 }
 
 .member__category {

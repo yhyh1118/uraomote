@@ -48,59 +48,6 @@ img {
   text-align: center;
 }
 
-.btn {
-  font-family: "Ysabeau Office";
-  font-size: 1.5rem;
-  font-weight: 600;
-
-  padding: 12px var(--contentPadding);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn--round {
-  color: var(--primary-dark);
-  background-color: var(--primary-light);
-
-  border-radius: 32px;
-  border: 0.5px solid var(--primary-light);
-}
-
-.btn__arrow--round path {
-  fill: var(--primary-dark);
-  /* fill色を指定 */
-  stroke: var(--primary-dark);
-  /* stroke色を指定 */
-}
-
-.btn__arrow {
-  width: 18px;
-  display: flex;
-  align-items: center;
-}
-
-.page__title {
-  margin-top: 146px;
-  color: var(--primary-dark);
-  font-family: "Protest Strike";
-  font-size: 7.0rem;
-  position: relative;
-  text-align: center;
-}
-
-.page__title::before {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--primary-gray);
-  font-family: "Zen Kaku Gothic Antique";
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
 /* ============================================ 
 header
 /* ============================================ */
@@ -129,7 +76,6 @@ nav
 /* ============================================ */
 
 .nav {
-  /* mix-blend-mode: normal !important; */
   background: #222222;
   background-image: url(../img/noise.svg);
   position: fixed;
@@ -137,14 +83,10 @@ nav
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 100;
-  /* transform: translateX(-100%); */
   opacity: 0;
   pointer-events: none;
-  /* 非表示のときはクリックできないように */
   transition: opacity 0.5s ease;
-  /* opacityとmix-blend-modeのアニメーション */
-  /* transition: transform 0.4s; */
+  z-index: 10;
 }
 
 .nav__open {
@@ -283,4 +225,58 @@ footer
 
 .footer__light {
   display: none;
+}
+
+
+/* ============================================ 
+btn
+/* ============================================ */
+
+.btn {
+  font-family: "Ysabeau Office";
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  padding: 12px var(--contentPadding);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn--round {
+  color: var(--primary-dark);
+  background-color: var(--primary-light);
+  border-radius: 32px;
+}
+
+.btn__arrow--round path {
+  fill: var(--primary-dark);
+  stroke: var(--primary-dark);
+}
+
+.btn__arrow {
+  width: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.page__title {
+  margin-top: 146px;
+  color: var(--primary-dark);
+  font-family: "Protest Strike";
+  font-size: 7.0rem;
+  position: relative;
+  text-align: center;
+}
+
+.page__title::before {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--primary-gray);
+  font-family: "Zen Kaku Gothic Antique";
+  font-size: 1.4rem;
+  font-weight: 700;
 }
