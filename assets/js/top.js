@@ -75,36 +75,12 @@
             }
         });
 
-        //パララックス
-
-        // let rellax__txt = null; // Rellaxインスタンスを格納する変数
-
-        // $(window).on('scroll', function () {
-        //     const scrollTop = $(window).scrollTop();
-        //     const triggerStart = 500; // パララックス効果を開始するスクロール位置
-        //     const triggerEnd = 800;  // パララックス効果を終了するスクロール位置
-
-        //     if (scrollTop >= triggerStart && scrollTop <= triggerEnd) {
-        //         // 範囲内に入った場合
-        //         if (!rellax__txt) {
-        //             // Rellax__txtインスタンスが未作成の場合にのみ初期化
-        //             rellax__txt = new Rellax('.rellax__txt', {
-        //                 center: true // オプションを指定
-        //             });
-        //         }
-        //     } else {
-        //         // 範囲外の場合
-        //         if (rellax__txt) {
-        //             // 既にインスタンスが存在する場合は破棄
-        //             rellax__txt.destroy();
-        //             rellax__txt = null;
-        //         }
-        //     }
-        // });
-
         // rellax
         var rellax = new Rellax('.rellax', {
-            center: true
+            center: true,
+            round: false,   // 小数点以下の計算を減らすことで負荷軽減
+            vertical: true, // 水平方向の動きが不要なら無効化
+            horizontal: false
         });
 
     });
