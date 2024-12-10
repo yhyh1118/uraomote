@@ -285,7 +285,7 @@ main
 /* about */
 
 .mainCaption {
-  margin: 1000px var(--contentPadding);
+  margin: 800px var(--contentPadding) 1000px;
   text-align: center;
   position: relative;
 }
@@ -351,15 +351,15 @@ main
 .a {
   width: 70px;
   height: 80px;
-  left: 36px;
-  top: 90px;
+  left: 0;
+  top: -200px;
 }
 
 .b {
   width: 180px;
   height: 150px;
   right: -48px;
-  top: 30px;
+  top: -100px;
 }
 
 .c {
@@ -372,22 +372,22 @@ main
 .d {
   width: 213px;
   height: 150px;
-  left: -100px;
-  bottom: -200px;
+  left: -24px;
+  bottom: -500px;
 }
 
 .e {
-  width: 80px;
-  height: 50px;
-  right: 0;
-  bottom: -100px;
+  width: 90px;
+  height: 60px;
+  right: -10px;
+  bottom: 0px;
 }
 
 .f {
   width: 120px;
   height: 100px;
-  right: 80px;
-  bottom: -120px;
+  right: -50px;
+  bottom: -100px;
 }
 
 
@@ -599,11 +599,10 @@ input[type="checkbox"] {
 .js-mode-light img {
   filter: saturate(0.1);
 }
-
+/* 
 .js-mode-light .mainCaption img {
-  opacity: 0.4;
-  filter: saturate(0.3) brightness(1.4);
-}
+  filter: opacity(0.8);
+} */
 
 .js-mode-light .mainLogo_light {
   display: block;
