@@ -285,7 +285,7 @@ main
 /* about */
 
 .mainCaption {
-  margin: 800px var(--contentPadding) 1000px;
+  margin: 800px var(--contentPadding);
   text-align: center;
   position: relative;
 }
@@ -373,7 +373,7 @@ main
   width: 213px;
   height: 150px;
   left: -24px;
-  bottom: -500px;
+  bottom: -300px;
 }
 
 .e {
