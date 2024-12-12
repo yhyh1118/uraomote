@@ -145,7 +145,7 @@ banner
   .banner {
     /* background-color: #222222;
     background-image: url(../img/noise.svg); */
-    padding: 80px var(--contentPadding-pc);
+    padding: 50px var(--contentPadding-pc);
     /* width: 100%;
     height: 100vh; */
     /* position: fixed;
@@ -179,8 +179,8 @@ banner
   .banner__content {
     position: fixed;
     width: 80.8%;
-    max-width:max-content;
-    padding: 80px var(--contentPadding-pc);
+    max-width: max-content;
+    /* padding: 50px var(--contentPadding-pc); */
     /* top: 50%;
     left: 50%; */
     display: flex;
@@ -325,6 +325,66 @@ img {
   left: 5px;
 }
 
+@media screen and (min-width: 769px) {
+  .section__title {
+    /* color: var(--primary-light);
+    font-family: "Zen Kaku Gothic Antique"; */
+    font-size: 4.0rem;
+    /* font-weight: 700;
+    letter-spacing: 0.18rem;
+    position: relative; */
+  }
+  
+  
+  .section__title::after {
+    /* content: "ACT"; */
+    /* position: absolute; */
+    /* left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-darkGray);
+    font-family: "Protest Strike"; */
+    font-size: 16.0rem;
+    /* font-weight: 400;
+    z-index: -1; */
+  }
+  
+  .section {
+    padding: 0px var(--contentPadding);
+  }
+  
+  .section__txt {
+    /* color: var(--primary-light); */
+    font-size: 3.0rem;
+    /* font-weight: 500; */
+    /* line-height: 1.8; */
+    letter-spacing: 0.3rem;
+    /* margin-top: 46px; */
+    /* position: relative; */
+  }
+  
+  .section__txt::before {
+    /* content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-darkGray);
+    top: -19px;
+    left: 1px; */
+  }
+  
+  /* .section__txt--act::before {
+    top: -20px;
+    left: 1px;
+  }
+  
+  .section__txt--news::before {
+    top: -20px;
+    left: 5px;
+  }
+} */
+
+
 /* ============================================ 
 main
 /* ============================================ */
@@ -407,61 +467,33 @@ main
 }
 
 
-@media screen {
+@media screen and (min-width: 769px) {
   .mainImg {
     margin-top: 80px;
     padding: 0 var(--contentPadding-pc);
     width: 100%;
-    height: calc(100vh - 180px);
-    /* position: relative; */
+    height: calc(100vh - 130px);
   }
-  
+
   .mainLogo_dark,
   .mainLogo_light {
-    /* position: absolute; */
     width: 33%;
-    /* top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    opacity: 0.7; */
   }
-  
-  /* .mainLogo_light {
-    display: none;
-  } */
-  
+
   .scrollDown {
-    /* color: #FFFFFF;
-    mix-blend-mode: difference;
-    position: absolute; */
     display: inline-block;
-    bottom: 95px;
-    right: 0;
-    transform: translateX(-50%);
+    bottom: 200px;
+    right: 50px;
+    left: auto;
     transform: rotate(90deg);
-    /* text-align: center;
-    font-family: "Ysabeau Office"; */
-    font-size: 2.2rem;
-    font-weight: 600;
+    font-size: 2.0rem;
   }
-  
+
   .scrollBar {
-    /* position: absolute; */
-    right: 0px;
-    transform: translateX(-50%);
-    bottom: 95px;
-  }
-  
-  .scrollBar::after {
-    content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 1px;
-    height: 75px;
-    background: #fff;
-    mix-blend-mode: difference;
-    animation: liner 2.5s cubic-bezier(1, 0, 0, 1) infinite;
+    right: 111px;
+    left: auto;
+    bottom: 45px;
   }
 }
 
@@ -580,6 +612,16 @@ main
   content: "ACT";
 }
 
+.stage__detail-sp {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.stage__detail-pc {
+  display: none;
+}
+
 .stage__content {
   display: flex;
   flex-direction: column;
@@ -599,7 +641,7 @@ main
   z-index: -1;
 }
 
-.stage {
+.stage__tag {
   color: var(--primary-gray);
   text-align: center;
   font-family: "Protest Strike";
@@ -624,6 +666,97 @@ main
   padding: 50px var(--contentPadding) 100px;
   display: flex;
 }
+
+@media screen and (min-width: 769px) {
+  .stage__detail-sp {
+    display: none;
+  }
+
+  .stage__detail-pc {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .act__block {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10.4%;
+    position: relative;
+  }
+
+  .section--act {
+    position: relative;
+  }
+
+  .section--act::before {
+    content: "";
+    position: absolute;
+    background-color: var(--primary-black);
+    height: 1000px;
+    width: 100%;
+    top: 33%;
+    z-index: -1;
+  }
+
+  .act__rightBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 350px;
+    max-width: 500px;
+  }
+
+  .stage__content {
+    max-width: 500px;
+    margin-bottom: 80px;
+    position: relative;
+  }
+
+  .stage__content::before {
+    /* content: "";
+    position: absolute; */
+    background-color: transparent;
+    /* height: 1000px;
+    width: 100%;
+    top: 33%;
+    right: -7%;
+    z-index: -1; */
+  }
+
+  .stage__tag {
+    /* color: var(--primary-gray);
+    text-align: center;
+    font-family: "Protest Strike";
+    font-size: 3.0rem;
+    background-color: var(--primary-light);
+    width: 174px;
+    padding: 3px 12px;
+    margin-top: 100px; */
+  }
+
+  .stage__title {
+    /* color: var(--primary-light); */
+    text-align:start;
+    /* font-family: "Zen Kaku Gothic Antique"; */
+    font-size:3.0rem;
+    /* font-weight: 700; */
+  }
+
+  .stage__summary {
+    font-family: "Noto Sans JP";
+    font-size: 2.0rem;
+    line-height: 1.5;
+  }
+
+  .slideImg {
+    padding: 150px var(--contentPadding);
+    display: flex;
+    max-height: 700px;
+    width: 100%;
+  }
+}
+
 
 /* news */
 .section--news {
@@ -660,6 +793,44 @@ main
 
 .btn--news {
   margin-top: 50px;
+}
+
+@media screen and (min-width: 769px) {
+  .section--news {
+    margin-bottom: 150px;
+  }
+  
+  /* .section__title--news::after {
+    content: "NEWS";
+  } */
+  
+  .news__list {
+    /* display: flex;
+    flex-direction: column; */
+    gap: 30px;
+    margin: 80px 0 50px;
+  }
+  
+  .news__content {
+    background-color: var(--primary-gray);
+    padding: 40px 50px;
+    font-family: "Ysabeau Office";
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  .news__txt {
+    font-family: "Noto Sans JP";
+    font-size: 1.8rem;
+    font-weight: 350;
+    line-height: 1.8;
+    letter-spacing: 0.18rem;
+    margin-top: 8px;
+  }
+  
+  .btn--news {
+    margin-top: 50px;
+  }
 }
 
 /* note */
@@ -702,6 +873,10 @@ main
 
 .note__logo__light {
   display: none;
+}
+
+@media screen and (min-width: 769px) {
+  
 }
 
 /* ============================================ 
