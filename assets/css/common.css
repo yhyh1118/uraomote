@@ -139,7 +139,6 @@ nav
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-
 }
 
 .nav__item {
@@ -188,7 +187,6 @@ nav
     position: relative;
     opacity: 1;
     display: flex;
-
   }
 
   .nav__open {
@@ -241,11 +239,6 @@ nav
     display: none;
   }
 
-  .nav__sns {
-    display: flex;
-    width: 85px;
-    justify-content: space-between;
-  }
 }
 
 /* ============================================ 

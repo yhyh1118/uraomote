@@ -143,16 +143,16 @@ banner
 
 @media screen and (min-width: 769px) {
   .banner {
-    background-color: #222222;
-    background-image: url(../img/noise.svg);
-    padding: 180px var(--contentPadding-pc);
-    width: 100%;
-    height: 100vh;
-    position: fixed;
+    /* background-color: #222222;
+    background-image: url(../img/noise.svg); */
+    padding: 80px var(--contentPadding-pc);
+    /* width: 100%;
+    height: 100vh; */
+    /* position: fixed;
     left: 0;
     top: 0;
     transition: 1s;
-    z-index: 200;
+    z-index: 200; */
     /* transform: translateY(-100%); */
   }
 
@@ -171,8 +171,8 @@ banner
 
   .banner__backGround {
     height: calc(100vh - 160px);
-    filter: saturate(0) grayscale(100%) brightness(30%) !important;
-    position: relative;
+    /* filter: saturate(0) grayscale(100%) brightness(30%) !important; */
+    /* position: relative; */
 
   }
 
@@ -181,9 +181,8 @@ banner
     width: 80.8%;
     max-width:max-content;
     padding: 80px var(--contentPadding-pc);
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    /* top: 50%;
+    left: 50%; */
     display: flex;
     flex-direction: row-reverse;
     gap: 120px;
@@ -404,6 +403,65 @@ main
   100% {
     transform: scale(1, 0);
     transform-origin: 0 100%;
+  }
+}
+
+
+@media screen {
+  .mainImg {
+    margin-top: 80px;
+    padding: 0 var(--contentPadding-pc);
+    width: 100%;
+    height: calc(100vh - 180px);
+    /* position: relative; */
+  }
+  
+  .mainLogo_dark,
+  .mainLogo_light {
+    /* position: absolute; */
+    width: 33%;
+    /* top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0.7; */
+  }
+  
+  /* .mainLogo_light {
+    display: none;
+  } */
+  
+  .scrollDown {
+    /* color: #FFFFFF;
+    mix-blend-mode: difference;
+    position: absolute; */
+    display: inline-block;
+    bottom: 95px;
+    right: 0;
+    transform: translateX(-50%);
+    transform: rotate(90deg);
+    /* text-align: center;
+    font-family: "Ysabeau Office"; */
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  
+  .scrollBar {
+    /* position: absolute; */
+    right: 0px;
+    transform: translateX(-50%);
+    bottom: 95px;
+  }
+  
+  .scrollBar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 75px;
+    background: #fff;
+    mix-blend-mode: difference;
+    animation: liner 2.5s cubic-bezier(1, 0, 0, 1) infinite;
   }
 }
 
