@@ -146,6 +146,7 @@ nav
   font-family: "Protest Strike";
   font-size: 4.5rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .nav__footer {
@@ -199,9 +200,10 @@ nav
 
   .nav__list {
     flex-direction: row;
-    gap: 20px;
+    /* gap: 10%; */
     position: absolute;
     right: 0;
+    left: auto;
     transform: translateY(-50%);
   }
 
