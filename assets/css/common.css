@@ -13,6 +13,7 @@ common
   --primary-black: #111111;
   --contentWidth: 91.4%;
   --contentPadding: 6.4%;
+  --contentPadding-pc: 3.5%;
 }
 
 html {
@@ -69,6 +70,19 @@ header
   background-color: var(--primary-light);
   border-bottom: 1px solid #8B8B8B;
   z-index: 2;
+}
+
+@media screen and (min-width: 769px) {
+
+  .logo {
+    width: 100px;
+  }
+
+  .header {
+    height: 80px;
+    padding: 0 var(--contentPadding-pc);
+  }
+
 }
 
 
@@ -166,12 +180,80 @@ nav
   /* 表示されたときにクリックできるように */
 }
 
+
+@media screen and (min-width: 769px) {
+  .nav {
+    background: none;
+    background-image: none;
+    position: relative;
+    opacity: 1;
+    display: flex;
+
+  }
+
+  .nav__open {
+    display: none;
+  }
+
+  .nav__header {
+    display: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    gap: 20px;
+    position: absolute;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  .nav__item {
+    width: 95px;
+    font-family: "Ysabeau Office";
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .nav-about,
+  .nav-goods,
+  .nav-contact {
+    letter-spacing: 0.18rem;
+  }
+
+  .nav-act {
+    letter-spacing: 0.144rem;
+  }
+
+  .nav-member {
+    letter-spacing: 0.3rem;
+  }
+
+  .nav-news {
+    letter-spacing: 0.27rem;
+  }
+
+  .nav-note {
+    letter-spacing: 0.126rem;
+  }
+
+  .nav__footer {
+    display: none;
+  }
+
+  .nav__sns {
+    display: flex;
+    width: 85px;
+    justify-content: space-between;
+  }
+}
+
 /* ============================================ 
 footer
 /* ============================================ */
 
 .footer {
-  padding: 80px var(--contentPadding) 30px;
+  padding: 50px var(--contentPadding);
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -189,6 +271,12 @@ footer
   color: #222222;
 }
 
+.footer__under {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .footer__sns {
   display: flex;
   justify-content: space-between;
@@ -201,7 +289,8 @@ footer
   width: 30px;
 }
 
-.footer__txt {
+.footer__txt,
+.copy {
   text-align: center;
   font-family: "Ysabeau Office";
   font-size: 1.5rem;
@@ -228,6 +317,62 @@ footer
   display: none;
 }
 
+@media screen and (min-width: 769px) {
+  .footer {
+    padding: 200px var(--contentPadding-pc) 50px;
+    gap: 80px;
+  }
+
+  .footer__under {
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer__sns {
+    width: 185px;
+    height: 35px;
+  }
+
+  .footer__sns img {
+    width: 35px;
+  }
+
+  .footer__txt,
+  .copy {
+    /* text-align: center; */
+    /* font-family: Ysabeau Office"; */
+    font-size: 1.6rem;
+    /* font-weight: 600; */
+    letter-spacing: 0.16rem;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    align-items: end;
+    letter-spacing: 0.16rem;
+  }
+
+  .terms {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .privacy {
+    border-left: 1px solid var(--primary-light);
+    padding-left: 10px;
+  }
+
+  .copy {
+    margin-top: 0;
+  }
+
+  .footer__light {
+    display: none;
+  }
+}
+
+
 
 /* ============================================ 
 btn
@@ -248,7 +393,7 @@ btn
 .btn--round {
   color: var(--primary-dark);
   background-color: var(--primary-light);
-  border-radius: 32px;
+  border-radius: 100px;
 }
 
 .btn__arrow--round path {
@@ -280,4 +425,17 @@ btn
   font-family: "Zen Kaku Gothic Antique";
   font-size: 1.4rem;
   font-weight: 700;
+}
+
+@media screen and (min-width: 769px) {
+  .btn {
+    font-size: 2.0rem;
+    padding: 18px 36px;
+    gap: 12px;
+  }
+
+  .btn__arrow {
+    width: 22px;
+  }
+
 }
