@@ -377,8 +377,6 @@ btn
   font-family: "Ysabeau Office";
   font-size: 1.5rem;
   font-weight: 600;
-
-  padding: 12px var(--contentPadding);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -387,6 +385,7 @@ btn
 
 .btn--round {
   color: var(--primary-dark);
+  padding: 12px var(--contentPadding);
   background-color: var(--primary-light);
   border-radius: 100px;
   width: fit-content;
@@ -432,10 +431,15 @@ btn
 
   .page__title::before {
     font-size: 2.0rem;
-    top: -30px;
+    top: ;
   }
 
   .btn {
+    font-size: 2.0rem;
+    gap: 12px;
+  }
+
+  .btn--round {
     font-size: 2.0rem;
     padding: 18px 36px;
     gap: 12px;

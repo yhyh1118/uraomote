@@ -200,7 +200,7 @@ stage, archive
 }
 
 .btn__zone {
-    padding: 0 var(--contentPadding) 50px 0;
+    padding: 50px var(--contentPadding) ;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -223,6 +223,110 @@ stage, archive
 .btn--stage path {
     fill: var(--primary-light);
     stroke: var(--primary-light);
+}
+
+@media screen and (min-width: 769px) {
+    .stage__mainContent {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10.4%;
+        padding: 160px 10.4% 80px;
+    }
+    
+    .stage__content {
+        padding: 0;
+        align-items: flex-start;
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    
+    .stage__flyer {
+        padding: 0;
+        max-width: 600px;
+        width: 50%;
+    }
+    
+    .stage__name {
+        font-size: 2.5rem;
+    }
+    
+    .stage__title {
+        font-size: 5.0rem;
+    }
+    
+    .stage__date {
+        font-size: 2.5rem;
+        margin-top: 40px;
+    }
+
+    .story__summary {
+    font-size: 4.5rem;
+
+    }
+
+    .story__synopsis {
+        font-size: 3.0rem;
+        letter-spacing: 0.30rem;
+    }
+
+    .gallery {
+        margin-top: 55px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .gallery__img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 40px;
+    }
+
+    .gallery__img img {
+        min-width: 350px;
+        width: 25%;
+    }
+    
+    .gallery__title {
+        font-size: 10.0rem;
+        text-align: center;
+    }
+    
+
+    .section--story {
+        padding: 80px 16.6%;
+    }
+
+    .info {
+        padding: 80px 16.6% 0;
+    }
+
+    .info__title {
+        font-size: 10.0rem;
+        border-bottom: 2px solid var(--primary-gray);
+    }
+    .info__list {
+        margin-top: 50px;
+        gap: 40px;
+    }
+
+    .info__content__title{
+        font-size: 5.0rem;
+    }
+
+    .info__content__txt{
+        margin-top: 12px;
+    }
+
+    .btn__zone {
+        padding: 50px 16.6% 80px;
+    }
+
+
+
 }
 
 /* ============================================ 
@@ -480,7 +584,7 @@ news
         border-radius: 2px;
     }
 
-    .page__side {
+    .page__side--news {
         display: flex;
         flex-direction: row;
         gap: 10.4%;
@@ -541,7 +645,7 @@ contact
     display: none;
 }
 
-@media screen and (min-width: 1199px) {
+@media screen and (min-width: 1099px) {
     .page__title--contact {
         margin: 0;
         display: inline;
@@ -565,7 +669,15 @@ contact
 
     .contact__img {
         display: block;
-        max-width: 600px;
+        width: 500px;
+        filter: saturate(0);
+    }
+
+    .page__side--contact {
+        display: flex;
+        flex-direction: row;
+        gap: 10.4%;
+        padding: 230px 0 100px 10.4%;
     }
 }
 

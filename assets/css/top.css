@@ -23,6 +23,15 @@ Top_header, nav
   color: #FFFFFF;
 }
 
+
+@media screen and (min-width: 769px) {
+  .nav__item {
+    color: #FFFFFF;
+    mix-blend-mode: difference;
+  }
+}
+
+
 /* ============================================ 
 banner
 /* ============================================ */
@@ -38,7 +47,6 @@ banner
   top: 0;
   transition: 1s;
   z-index: 200;
-  /* transform: translateY(-100%); */
 }
 
 .banner::after {
@@ -167,7 +175,7 @@ banner
     padding: 50px var(--contentPadding-pc);
     display: flex;
     flex-direction: row-reverse;
-    gap: unset;
+    gap: 5.2%;
     justify-content: space-between;
   }
 
@@ -186,6 +194,7 @@ banner
     align-items: flex-start;
     justify-content: center;
     padding: 130px 0;
+    width: 50%;
   }
 
   .banner__name {
@@ -214,7 +223,7 @@ banner
   .newStage__btn {
     text-align: center;
     position: relative;
-    min-width: 400px;
+    width: 50%;
   }
 
   .newStage__btn::before {
@@ -228,6 +237,7 @@ banner
   .banner__date {
     text-align: left;
     font-size: 2.5rem;
+    margin-top: 30px;
   }
 
   .btn--round--banner {
