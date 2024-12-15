@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/sub.css">
 </head>
 
-<body id="dark">
+<body id="light">
     <div id="container" class="container">
         <!-- ヘッダー -->
         <header class="header">
@@ -81,48 +81,58 @@
         <main class="main">
             <article class="article">
                 <!-- <h3">ニュース</h3> -->
-                <h2 class="page__title page__title--news">NEWS</h2>
+                <div class="page__side">
+                    <h2 class="page__title page__title--news">NEWS</h2>
+                    <ul class="news__list">
+                        <li class="news__item">
+                            <time class="news__date" datetime="2024-11-04">2024.11.3</time>
+                            <div class="side__right">
+                                <h3 class="news__title">第1回本公演チケット予約開始</h3>
+                                <div class="news__open"></div>
+                                <p class="news__txt">第一回本公演無事に終了いたしました。
+                                    ご来場ありがとうございました。
+                                    またのお越しをお待ちしております。</p>
+                            </div>
+                        </li>
 
-                <ul class="news__list">
-                    <li class="news__item">
-                        <time class="news__date" datetime="2024-11-04">2024.11.3</time>
-                        <h3 class="news__title">第1回本公演チケット予約開始</h3>
-                        <div class="news__open"></div>
-                        <p class="news__txt">第一回本公演無事に終了いたしました。
-                            ご来場ありがとうございました。
-                            またのお越しをお待ちしております。</p>
-                    </li>
+                        <li class="news__item">
+                            <time class="news__date" datetime="2024-11-04">2024.11.3</time>
+                            <div class="side__right">
+                                <h3 class="news__title">第一回公演「黙るなボケ！」公演情報を解禁いたしました。</h3>
+                                <div class="news__open"></div>
+                                <!-- <p class="news__txt">第一回本公演無事に終了いたしました。
+                                    ご来場ありがとうございました。
+                                    またのお越しをお待ちしております。</p> -->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-                    <li class="news__item">
-                        <time class="news__date" datetime="2024-11-04">2024.11.3</time>
-                        <h3 class="news__title">第一回公演「黙るなボケ！」公演情報を解禁いたしました。</h3>
-                        <div class="news__open"></div>
-                    </li>
-
-                </ul>
             </article>
 
             <!-- footer -->
-            <footer class="footer footer--light">
-                <img class="footer__logo" src="assets/img/logo_black3.svg" alt="">
-                <ul class="footer__sns">
-                    <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/instagram_dark.svg"
-                                alt="Instagram"></a></li>
-                    <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/twitter_dark.svg"
-                                alt="Twitter"></a>
-                    </li>
-                    <li class="sns__item"><a href="#" target="_blank"><img src="assets/img/youtube_dark.svg"
-                                alt="Youtube"></a>
-                    </li>
-                </ul>
-                <div class="footer__txt">
-                    <div class="term-privacy">
-                        <a class="term" href="term.html">Term of use</a>
-                        <a class="privacy" href="privacy.html">Privacy Policy</a>
-
+            <footer class="footer footer--dark">
+                <img class="footer__logo" src="assets/img/logo_white3.svg" alt="">
+                <div class=" footer__under">
+                    <ul class="footer__sns">
+                        <li class="sns__item"><a href="https://www.instagram.com/8uraomote8/" target="_blank"><img
+                                    src="assets/img/instagram.svg" alt="Instagram"></a>
+                        </li>
+                        <li class="sns__item"><a href="https://x.com/8uraomote8" target="_blank"><img
+                                    src="assets/img/twitter.svg" alt="Twitter"></a>
+                        </li>
+                        <li class="sns__item"><a href="https://www.youtube.com/@8uraomote8?themeRefresh=1"
+                                target="_blank"><img src="assets/img/youtube.svg" alt="YouTube"></a>
+                        </li>
+                    </ul>
+                    <div class="footer__txt">
+                        <div class="terms">
+                            <a class="term" href="term.html">Term of use</a>
+                            <a class="privacy" href="privacy.html">Privacy Policy</a>
+                        </div>
+                        <!-- コピーライト -->
+                        <p class="copy"><small>&copy;2024 Uraomote.</small></p>
                     </div>
-                    <!-- コピーライト  -->
-                    <p class="copy"><small>&copy;2024 uraomote.</small></p>
                 </div>
             </footer>
         </main>

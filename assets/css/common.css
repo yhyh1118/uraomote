@@ -200,7 +200,6 @@ nav
 
   .nav__list {
     flex-direction: row;
-    /* gap: 10%; */
     position: absolute;
     right: 0;
     left: auto;
@@ -208,6 +207,7 @@ nav
   }
 
   .nav__item {
+    color: var(--primary-dark);
     width: 95px;
     font-family: "Ysabeau Office";
     font-size: 1.8rem;
@@ -389,6 +389,7 @@ btn
   color: var(--primary-dark);
   background-color: var(--primary-light);
   border-radius: 100px;
+  width: fit-content;
 }
 
 .btn__arrow--round path {
@@ -404,6 +405,7 @@ btn
 
 .page__title {
   margin-top: 146px;
+  height: auto;
   color: var(--primary-dark);
   font-family: "Protest Strike";
   font-size: 7.0rem;
@@ -423,6 +425,16 @@ btn
 }
 
 @media screen and (min-width: 769px) {
+  .page__title {
+    margin-top: 230px;
+    font-size: 10.0rem;
+  }
+
+  .page__title::before {
+    font-size: 2.0rem;
+    top: -30px;
+  }
+
   .btn {
     font-size: 2.0rem;
     padding: 18px 36px;
