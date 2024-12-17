@@ -188,6 +188,7 @@ nav
     position: relative;
     opacity: 1;
     display: flex;
+    pointer-events: all;
   }
 
   .nav__open {
@@ -380,7 +381,13 @@ btn
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: 1.2;
   gap: 10px;
+}
+
+.btn:hover {
+  letter-spacing: 0.3rem;
+  transition: 0.2s;
 }
 
 .btn--round {
@@ -440,7 +447,6 @@ btn
   }
 
   .btn--round {
-    font-size: 2.0rem;
     padding: 18px 36px;
     gap: 12px;
   }
