@@ -75,7 +75,7 @@ header
 @media screen and (min-width: 769px) {
 
   .logo {
-    width: 100px;
+    width: 70px;
   }
 
   .header {
@@ -189,6 +189,7 @@ nav
     opacity: 1;
     display: flex;
     pointer-events: all;
+    height: 80px;
   }
 
   .nav__open {
