@@ -255,16 +255,10 @@ footer
   align-items: center;
 }
 
-.footer--dark {
-  background-color: var(--primary-dark);
-  background-image: url(../img/noise.svg);
-  color: var(--primary-light);
+.footer__logo {
+  fill: #FFF;
 }
 
-.footer--light {
-  background-color: var(--primary-light);
-  color: #222222;
-}
 
 .footer__under {
   display: flex;
@@ -280,8 +274,10 @@ footer
   height: 30px;
 }
 
-.footer__sns img {
+.footer__sns svg {
   width: 30px;
+  height: 30px;
+  fill: var(--primary-light);
 }
 
 .footer__txt,
@@ -308,8 +304,27 @@ footer
   margin-top: 13px;
 }
 
-.footer__light {
-  display: none;
+/* light設定 */
+
+body#light footer {
+  background-color: var(--primary-dark);
+  background-image: url(../img/noise.svg);
+  color: var(--primary-light);
+}
+
+/* dark設定 */
+
+body#dark footer {
+  background-color: var(--primary-light);
+  color: #222222;
+}
+
+body#dark .footer__logo {
+  fill: #000;
+}
+
+body#dark .footer__sns svg {
+  fill: var(--primary-dark);
 }
 
 @media screen and (min-width: 769px) {
@@ -317,7 +332,7 @@ footer
     padding: 200px var(--contentPadding-pc) 50px;
     gap: 80px;
   }
-
+  
   .footer__under {
     flex-direction: row-reverse;
     width: 100%;
@@ -333,12 +348,14 @@ footer
     width: 35px;
   }
 
+  .footer__sns svg {
+    width: 35px;
+    height: 35px;
+  }
+
   .footer__txt,
   .copy {
-    /* text-align: center; */
-    /* font-family: Ysabeau Office"; */
     font-size: 1.6rem;
-    /* font-weight: 600; */
     letter-spacing: 0.16rem;
     display: flex;
     flex-direction: row-reverse;
@@ -361,12 +378,7 @@ footer
   .copy {
     margin-top: 0;
   }
-
-  .footer__light {
-    display: none;
-  }
 }
-
 
 
 /* ============================================ 
@@ -384,10 +396,10 @@ btn
   gap: 10px;
 }
 
-.btn:hover {
+/* .btn:hover {
   letter-spacing: 0.3rem;
   transition: 0.2s;
-}
+} */
 
 .btn--round {
   color: var(--primary-dark);
