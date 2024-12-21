@@ -421,7 +421,7 @@ main
 }
 
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1023px) {
   .mainImg {
     margin-top: 80px;
     padding: 0 var(--contentPadding-pc);
