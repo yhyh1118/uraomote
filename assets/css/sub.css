@@ -607,6 +607,8 @@ news
         flex-direction: row;
         gap: 10.4%;
         padding: 230px 0 100px 10.4%;
+        max-width: 1440px;
+        margin: 0 auto;
     }
 }
 
@@ -723,7 +725,7 @@ terms
 
 .terms__list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: left;
     gap: 10px;
     margin: 100px var(--contentPadding) 80px;
@@ -732,7 +734,7 @@ terms
 
 .terms__title {
     font-family: "Zen Kaku Gothic Antique";
-    font-size: 2.0rem;
+    font-size: 2.2rem;
     font-weight: 700;
     line-height: 1.8;
 }
@@ -740,10 +742,14 @@ terms
 .terms__txt {
     margin-top: 5px;
     color: var(--primary-gray);
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.8;
     letter-spacing: 0.18rem;
+}
+
+.terms__txt__list {
+    margin-left: 10px;
 }
 
 @media screen and (min-width: 759px) {

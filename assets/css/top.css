@@ -686,6 +686,8 @@ main
     justify-content: space-between;
     gap: 10.4%;
     position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   .section--act {
