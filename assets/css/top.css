@@ -352,14 +352,14 @@ main
   position: relative;
 }
 
-.mainLogo_dark,
-.mainLogo_light {
+.mainLogo {
   position: absolute;
   width: 66%;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   opacity: 0.7;
+  fill: #FFF;
 }
 
 .mainLogo_light {
@@ -429,8 +429,7 @@ main
     height: calc(100vh - 130px);
   }
 
-  .mainLogo_dark,
-  .mainLogo_light {
+  .mainLogo {
     width: 33%;
   }
 
@@ -991,12 +990,8 @@ input[type="checkbox"] {
   filter: saturate(0.1);
 }
 
-.js-mode-light .mainLogo_light {
-  display: block;
-}
-
-.js-mode-light .mainLogo_dark {
-  display: none;
+.js-mode-light .mainLogo {
+  fill: #000;
 }
 
 
