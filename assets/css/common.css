@@ -27,8 +27,6 @@ body {
   font-style: normal;
   color: var(--primary-light);
   line-height: 1;
-
-  /* 背景設定 */
   background-color: var(--primary-dark);
   background-image: url(../img/noise.svg);
   background-size: cover;
