@@ -452,7 +452,7 @@ main
 /* about */
 
 .mainCaption {
-  margin: 800px var(--contentPadding);
+  margin: 300px var(--contentPadding) 400px;
   text-align: center;
   position: relative;
 }
@@ -510,16 +510,13 @@ main
 
 @media screen and (min-width: 769px) {
   .mainCaption {
-    margin: 800px var(--contentPadding);
-    text-align: center;
-    position: relative;
+    margin: 500px var(--contentPadding-pc);
   }
 
   .mainCaption__title {
     min-width: 750px;
     max-width: 800px;
     font-size: 8.0rem;
-    font-weight: 700;
   }
 
   .quote_left {
@@ -529,7 +526,6 @@ main
   }
 
   .quote_right {
-    position: absolute;
     width: 40px;
     height: 30px;
     right: 100px;
