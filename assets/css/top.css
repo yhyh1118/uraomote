@@ -843,10 +843,15 @@ main
   margin-top: 30px;
 }
 
+.note__btn:hover .btn__arrow {
+  transform: translateX(30%);
+  transition: 0.3s;
+}
 
 .note__btn img {
   width: 90px;
 }
+
 /* 
 .note__btn img:hover {
   margin-right: 20px;

@@ -132,7 +132,7 @@ nav
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -200,6 +200,7 @@ nav
 
   .nav__list {
     flex-direction: row;
+    gap: 20px;
     position: absolute;
     right: 0;
     left: auto;
@@ -332,7 +333,7 @@ body#dark .footer__sns svg {
     padding: 200px var(--contentPadding-pc) 50px;
     gap: 80px;
   }
-  
+
   .footer__under {
     flex-direction: row-reverse;
     width: 100%;
@@ -396,10 +397,6 @@ btn
   gap: 10px;
 }
 
-/* .btn:hover {
-  letter-spacing: 0.3rem;
-  transition: 0.2s;
-} */
 
 .btn--round {
   color: var(--primary-dark);
@@ -418,6 +415,11 @@ btn
   width: 18px;
   display: flex;
   align-items: center;
+}
+
+.btn:hover .btn__arrow {
+  transform: translateX(30%);
+  transition: 0.3s;
 }
 
 .page__title {
