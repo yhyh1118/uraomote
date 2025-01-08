@@ -926,8 +926,8 @@ input[type="checkbox"] {
 
 .switch-mode {
   position: fixed;
-  left: calc(-75px + var(--contentPadding-pc));
-  bottom: -62.5px;
+  left: calc(-70px + var(--contentPadding-pc));
+  bottom: -65px;
   display: block;
   width: 100px;
   height: 100px;
@@ -1024,9 +1024,9 @@ input[type="checkbox"] {
   display: none;
 }
 
-/* .js-mode-light .note__logo__light {
+.js-mode-light .note__logo__light {
   display: block;
-} */
+}
 
 .js-mode-light .footer__logo {
   fill: #000;
