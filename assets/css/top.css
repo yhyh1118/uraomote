@@ -41,7 +41,7 @@ banner
   background-image: url(../img/noise.svg);
   padding: 45px var(--contentPadding);
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   position: fixed;
   left: 0;
   top: 0;
@@ -350,6 +350,7 @@ main
   width: 100%;
   height: calc(100vh - 90px);
   position: relative;
+  filter: saturate(0) brightness(0.7);
 }
 
 .mainLogo {
@@ -358,7 +359,7 @@ main
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  opacity: 0.7;
+  opacity: 0.8;
   fill: #FFF;
 }
 
@@ -457,7 +458,7 @@ main
 /* about */
 
 .mainCaption {
-  margin: 300px var(--contentPadding) 400px;
+  margin: 300px 0 400px;
   text-align: center;
   position: relative;
 }
@@ -568,21 +569,21 @@ main
 .a {
   width: 70px;
   height: 80px;
-  left: 0;
+  left: 24px;
   top: -200px;
 }
 
 .b {
   width: 180px;
   height: 150px;
-  right: -48px;
+  right: -10px;
   top: -100px;
 }
 
 .c {
   width: 120px;
   height: 150px;
-  left: -24px;
+  left: 0px;
   top: 60px;
 }
 
@@ -603,7 +604,7 @@ main
 .f {
   width: 120px;
   height: 100px;
-  right: -50px;
+  right: -10px;
   bottom: -100px;
 }
 
@@ -937,18 +938,18 @@ input[type="checkbox"] {
 }
 
 .switch-mode::before {
-  content: url("../img/sun.svg");
-  width: 15px;
-  height: 15px;
+  content: url("../img/switch.svg");
+  width: 20px;
+  height: 20px;
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
 .switch-mode::after {
-  content: url("../img/moon.svg");
-  width: 15px;
-  height: 15px;
+  content: url("../img/switch.svg");
+  width: 20px;
+  height: 20px;
   position: absolute;
   right: 0;
   top: 0;
@@ -999,6 +1000,12 @@ input[type="checkbox"] {
 
 .js-mode-light .mainLogo {
   fill: #000;
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8)); 
+  opacity: 1;
+}
+
+ .js-mode-light .mainImg {
+  filter: saturate(0.2) brightness(0.7); 
 }
 
 
@@ -1019,9 +1026,9 @@ input[type="checkbox"] {
   display: none;
 }
 
-.js-mode-light .note__logo__light {
+/* .js-mode-light .note__logo__light {
   display: block;
-}
+} */
 
 .js-mode-light .footer__logo {
   fill: #000;
