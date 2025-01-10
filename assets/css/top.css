@@ -606,6 +606,52 @@ main
   bottom: -100px;
 }
 
+@media screen and (min-width: 769px) {
+
+  .a {
+    width: 100px;
+    height: 120px;
+    left: 24px;
+    top: -150px;
+  }
+  
+  .b {
+    width: 300px;
+    height: 200px;
+    right: -10px;
+    top: -80px;
+  }
+  
+  .c {
+    width: 150px;
+    height: 180px;
+    left: 0px;
+    top: 60px;
+  }
+  
+  .d {
+    width: 400px;
+    height: 300px;
+    left: -24px;
+    bottom: -60px;
+  }
+  
+  .e {
+    width: 120px;
+    height: 90px;
+    right: -10px;
+    bottom: 60px;
+  }
+  
+  .f {
+    width: 150px;
+    height: 120px;
+    right: -10px;
+    bottom: -100px;
+  }
+
+}
+
 
 
 /* act */
@@ -956,13 +1002,13 @@ input[type="checkbox"] {
 @media screen and (min-width: 769px) {
 
   .switch-mode::before {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
 
   .switch-mode::after {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
 
 }
