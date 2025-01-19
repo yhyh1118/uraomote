@@ -189,6 +189,8 @@ stage, archive
     font-family: "Protest Strike";
     font-size: 7.0rem;
     text-align: left;
+    border-bottom: 1px solid var(--primary-lightGray);
+
 }
 
 .info__list {
@@ -220,10 +222,6 @@ stage, archive
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.btn--back svg {
-    transform: rotate(180deg);
 }
 
 .btn--back path {
@@ -322,7 +320,6 @@ stage, archive
 
     .info__title {
         font-size: 10.0rem;
-        border-bottom: 2px solid var(--primary-gray);
     }
     .info__list {
         margin-top: 50px;

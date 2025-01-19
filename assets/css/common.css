@@ -422,6 +422,11 @@ btn
   transition: 0.3s;
 }
 
+.btn--back:hover .btn__arrow {
+  transform: translateX(-30%);
+  transition: 0.3s;
+}
+
 .page__title {
   margin-top: 146px;
   height: auto;
