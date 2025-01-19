@@ -49,17 +49,23 @@ banner
   z-index: 200;
 }
 
-.banner::after {
-  color: #E0E0E0;
-  content: 'Scroll';
+/* ×の場合 */
+.banner::after, .banner::before {
+  content: '';
   position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-family: "Ysabeau Office";
-  font-size: 1.5rem;
-  font-weight: 600;
+  right: calc(var(--contentPadding) + 8px);
+  top: 25px;
+  width: 2px;
+  height: 20px;
+  background-color: #E0E0E0;
+}
+
+.banner::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+ 
+.banner::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
 }
 
 .banner__backGround {
@@ -166,8 +172,8 @@ banner
     padding: 50px var(--contentPadding-pc);
   }
 
-  .banner::after {
-    content: '';
+  .banner::after, .banner::before {
+    right: calc(var(--contentPadding-pc) + 8px);
   }
 
   .banner__backGround {
@@ -344,13 +350,23 @@ main
  ============================================ */
 
 /* main */
-.mainImg {
+.mainImg-sp {
   margin-top: 45px;
   padding: 0 var(--contentPadding);
   width: 100%;
   height: calc(100svh - 90px);
   position: relative;
   filter: saturate(0) brightness(0.7);
+}
+
+.mainImg-pc {
+  margin-top: 80px;
+  padding: 0 var(--contentPadding-pc);
+  width: 100%;
+  height: calc(100svh - 130px);
+  position: relative;
+  filter: saturate(0) brightness(0.7);
+  display: none;
 }
 
 .mainLogo {
@@ -423,11 +439,12 @@ main
 
 
 @media screen and (min-width: 1023px) {
-  .mainImg {
-    margin-top: 80px;
-    padding: 0 var(--contentPadding-pc);
-    width: 100%;
-    height: calc(100svh - 130px);
+  .mainImg-pc {
+    display: block;
+  }
+
+  .mainImg-sp {
+    display: none;
   }
 
   .mainLogo {
@@ -813,6 +830,33 @@ main
   font-family: "Ysabeau Office";
   font-size: 1.5rem;
   font-weight: 900;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s;
+  color: var(--primary-light); /* 初期の文字色を設定 */
+}
+
+.news__content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* 初期位置は右側 */
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-light); /* ホバー時の背景色 */
+  transform-origin: right top; /* 右上を基準に変形 */
+  transition: transform 0.5s, left 0.5s; /* スムーズな動き */
+  z-index: 0;
+}
+
+.news__content:hover {
+  color: var(--primary-gray);
+  z-index: 1;
+}
+
+.news__content:hover::before {
+  left: 0; /* ホバー時に背景が右から左に移動 */
+  transform: scale(1); /* 元のサイズに戻る */
 }
 
 .news__txt {
@@ -821,6 +865,13 @@ main
   font-weight: 350;
   line-height: 1.8;
   letter-spacing: 0.18rem;
+  position: relative;
+  z-index: 1;
+}
+
+.news__time {
+  position: relative;
+  z-index: 1;
 }
 
 .btn--news {
@@ -1043,9 +1094,10 @@ input[type="checkbox"] {
 }
 
 .js-mode-light .mainLogo {
-  fill: #000;
+  display: none;
+  /* fill: #000;
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8)); 
-  opacity: 1;
+  opacity: 1; */
 }
 
  .js-mode-light .mainImg {
