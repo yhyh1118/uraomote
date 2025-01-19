@@ -704,7 +704,8 @@ terms
 /* ============================================ */
 
 .page__title--terms,
-.page__title--privacy {
+.page__title--privacy,
+.page__title--404 {
     font-size: 4.5rem;
 }
 
@@ -717,6 +718,12 @@ terms
 
 .page__title--privacy::before {
     content: "個人情報取り扱いについて";
+    font-size: 1.4rem;
+    color: var(--primary-gray);
+}
+
+.page__title--404::before {
+    content: "Sorry...";
     font-size: 1.4rem;
     color: var(--primary-gray);
 }
