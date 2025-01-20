@@ -1153,3 +1153,7 @@ input[type="checkbox"] {
 .js-mode-light .section__txt--note::before {
   background-color: #E0E0E0;
 }
+
+.js-mode-light .news__content::before {
+  background-color: #535353;
+}

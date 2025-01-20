@@ -724,7 +724,7 @@ terms
 
 .page__title--404::before {
     content: "Sorry...";
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--primary-gray);
 }
 
@@ -760,7 +760,8 @@ terms
 @media screen and (min-width: 759px) {
 
     .page__title--terms,
-    .page__title--privacy {
+    .page__title--privacy,
+    .page__title--404 {
         font-size: 8.0rem;
     }
 
