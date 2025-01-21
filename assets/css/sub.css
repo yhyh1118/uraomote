@@ -190,7 +190,39 @@ stage, archive
     font-size: 7.0rem;
     text-align: left;
     border-bottom: 1px solid var(--primary-lightGray);
+    position: relative;
+}
 
+.info__title::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2.5px;
+    border-radius: 10px;
+    background-color: var(--primary-gray);
+    top: 50%;
+    right: 20px;
+    /* transform: translateX(-50%); */
+    transform: translateY(-50%);
+}
+
+.info__title::before {
+    content: '';
+    position: absolute;
+    width: 2.5px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--primary-gray);
+    top: 50%;
+    right: 29px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease; /* 回転アニメーション */
+    display: block;
+}
+
+.info__title.is-open::before {
+    transform: translateY(-50%) rotate(90deg); /* クリック時に90度回転 */
+    /* display: none; */
 }
 
 .info__list {
@@ -198,8 +230,14 @@ stage, archive
     display: flex;
     flex-direction: column;
     gap: 8px;
-
+    display: none;
 }
+
+.info__list.is-open {
+    display: block;
+}
+
+
 
 .info__content__title {
     font-family: "Ysabeau Office";
@@ -534,12 +572,12 @@ news
 }
 
 .news__txt {
-
     padding-left: 10px;
     color: var(--primary-gray);
     font-size: 1.6rem;
     line-height: 1.8;
     letter-spacing: 0.16rem;
+    display: none;
 }
 
 @media screen and (min-width: 1023px) {
