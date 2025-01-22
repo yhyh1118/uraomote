@@ -45,7 +45,7 @@
             }
         });
 
-        // rellax
+        // // rellax
         var rellax = new Rellax('.rellax', {
             center: true,
             round: false,
