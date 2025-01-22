@@ -726,9 +726,9 @@ main
 }
 
 /* slideImg */
-.slideImg {
-  padding: 50px 0 100px;
-  display: flex;
+.splide__slide img {
+  height: auto;
+  width: 60%;
 }
 
 @media screen and (min-width: 769px) {

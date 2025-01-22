@@ -69,6 +69,9 @@
             horizontal: false
         });
 
+        const mySplide = new Splide( '.splide' );
+        mySplide.mount();
+
     });
 }
 
