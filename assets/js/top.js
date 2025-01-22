@@ -55,6 +55,7 @@
 
         const options = {
             type: "loop", // ループさせる
+            speed: 1,
             arrows: false, // 矢印ボタンを非表示
             pagination: false, // ページネーションを非表示
             drag: "free", // フリードラッグモード
