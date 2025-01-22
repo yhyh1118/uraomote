@@ -12,36 +12,36 @@
         const checkToggle = document.getElementById('js_mode_toggle');
         const rotateIcon = document.getElementById('js_rotate');
         const classLight = 'js-mode-light';
-        const keyLocalStorage = 'uraomote-theme-mode';
-        const keyTimestamp = 'uraomote-theme-timestamp';
+        const theme = 'uraomote-theme-mode';
+        // const keyTimestamp = 'uraomote-theme-timestamp';
         let nowRotate = 0;
 
-        // 現在のタイムスタンプ
-        const currentTime = Date.now();
-        // 1時間の有効期限（ミリ秒）
-        const expiryTime = 3600 * 1000;
+        // // 現在のタイムスタンプ
+        // const currentTime = Date.now();
+        // // 1時間の有効期限（ミリ秒）
+        // const expiryTime = 3600 * 1000;
 
-        // localStorageから値を取得し、期限切れを確認
-        const storedMode = localStorage.getItem(keyLocalStorage);
-        const storedTimestamp = localStorage.getItem(keyTimestamp);
+        // // localStorageから値を取得し、期限切れを確認
+        // const storedMode = localStorage.getItem(theme);
+        // const storedTimestamp = localStorage.getItem(keyTimestamp);
 
-        // 有効期限が切れている場合、localStorageをクリア
-        if (storedTimestamp && currentTime - parseInt(storedTimestamp, 10) > expiryTime) {
-            localStorage.removeItem(keyLocalStorage);
-            localStorage.removeItem(keyTimestamp);
-        }
+        // // 有効期限が切れている場合、localStorageをクリア
+        // if (storedTimestamp && currentTime - parseInt(storedTimestamp, 10) > expiryTime) {
+        //     localStorage.removeItem(theme);
+        //     localStorage.removeItem(keyTimestamp);
+        // }
 
         // テーマモードの初期化
-        if (localStorage.getItem(keyLocalStorage) === 'light') {
+        if (localStorage.getItem(theme) === 'light') {
             rotateIcon.style.transform = 'rotate(180deg)';
             document.body.classList.add(classLight);
             checkToggle.checked = true;
-        } else if (localStorage.getItem(keyLocalStorage) === 'dark') {
+        } else if (localStorage.getItem(theme) === 'dark') {
             document.body.classList.remove(classLight);
             checkToggle.checked = false;
         } else {
             // デフォルトをダークモードに設定
-            localStorage.setItem(keyLocalStorage, 'dark');
+            localStorage.setItem(theme, 'dark');
             localStorage.setItem(keyTimestamp, currentTime);
             document.body.classList.remove(classLight);
             checkToggle.checked = false;
@@ -54,10 +54,10 @@
 
             if (e.target.checked) {
                 document.body.classList.add(classLight);
-                localStorage.setItem(keyLocalStorage, 'light');
+                localStorage.setItem(theme, 'light');
             } else {
                 document.body.classList.remove(classLight);
-                localStorage.setItem(keyLocalStorage, 'dark');
+                localStorage.setItem(theme, 'dark');
             }
         });
 
