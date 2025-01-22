@@ -55,24 +55,26 @@
 
         const options = {
             type: "loop", // ループさせる
-            speed: 1.5,
             arrows: false, // 矢印ボタンを非表示
             pagination: false, // ページネーションを非表示
             drag: "free", // フリードラッグモード
             gap: 72, // スライド間の余白
-            perPage: 4, // 表示するスライドの枚数
+            fixedWidth: 400,
+            // perPage: 4, // 表示するスライドの枚数
             breakpoints: {
-              769: {
-                perPage: 1.5, // 画面幅500px未満で表示枚数1枚
+                769: {
+                    fixedWidth: 250,
+                // perPage: 1.5, // 画面幅500px未満で表示枚数1枚
                 gap: 48, // 画面幅500px未満でスライド間の余白0
               },
-              1440: {
-                perPage: 3, // 画面幅500px未満で表示枚数1枚
+                1440: {
+                    fixedWidth: 300,
+                // perPage: 3, // 画面幅500px未満で表示枚数1枚
                 gap: 48, // 画面幅500px未満でスライド間の余白0
               },
             },
             autoScroll: {
-              speed: 0.5, // スクロール速度
+              speed: 0.6, // スクロール速度
               pauseOnHover: false, // カーソルが乗ってもスクロールを停止させない
             },
           };
