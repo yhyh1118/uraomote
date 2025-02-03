@@ -16,7 +16,7 @@
     rel="stylesheet">
   <!-- css -->
   <link rel="stylesheet" href="assets/css/destyle.css">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/css/sub.css">
 </head>
 
@@ -86,7 +86,49 @@
               <h2 class="page__title page__title--contact">CONTACT</h2>
               <div class="contact__content">
                 <p class="contact__txt">「劇団うらおもて」に関するお問い合わせは、こちらより承っております。ぜひお気軽にお問合せください。</p>
-                <div class="contact__form"></div>
+                <!-- <div class="contact__form"> -->
+                <form class="contact__form" action="your-action-url" method="POST">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" name="privacy" required> プライバシーポリシーに同意
+                    </label>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit">
+                      <p>Send Message</p>
+                      <svg class="btn__arrow btn__arrow--round" xmlns="http://www.w3.org/2000/svg" width="20" height="7"
+                        viewBox="0 0 20 7" fill="none">
+                        <path
+                          d="M1 3.53113H3.8125H1ZM19 3.53113L15.5 1.03125L19 3.53113ZM19 3.53113L15.5 5.96875L19 3.53113ZM19 3.53113H7.1875H19Z" />
+                        <path d="M1 3.53113H3.8125M19 3.53113L15.5 1.03125M19 3.53113L15.5 5.96875M19 3.53113H7.1875"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+
+                    </button>
+                  </div>
+                </form>
+                <!-- </div> -->
 
                 <div class="line__form">
                   <h2 class="line__title">LINE</h2>
